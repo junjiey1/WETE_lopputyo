@@ -1,0 +1,36 @@
+Bussitutka
+
+Tavoitteena luoda 
+
+
+Client -- php-- database -- php -- reittiopas api
+
+Tunnukset
+
+Tunnukset reittiopas apiin.
+userName: pysakkiaikataulu
+password: k0ulujuttu
+
+
+Web-tekniikoiden kurssityönä toteutetaan sovellus, joka hakee joukkoliikenteen ajoneuvojen reaaliaikaiset sijainnit ja tiedot. 
+Projektissa pyritään hyödyntämään kaikkia kurssin aikana käytettyjä tekniikoita ammattimaisesti.
+Tiukan aikataulun vuoksi jotkin kurssityön tavoitteet voivat jäädä saavuttamatta.
+
+Nettisivulla on pieni yläpalkki, josta käyttäjä voi muokata kartan ulkoasua ja näytettäviä kohteita.
+Jokainen kulkuneuvo näkyy kartalla kuvakkeena, joiden sijainti päivitetään muutaman sekunnin välein. 
+Kuvakkeen päällä on myös kulkuneuvon numero. Kulkuneuvon kuvaketta painamalla ruudulle aukeaa 
+infolaatikko joka kertoo tarkemmin kulkuneuvon tietoja.
+
+Lopputyössä käytetään googlen maps- ja reittioppaan ja rajapintaa. Nettisivua varten luomme REST-apin 
+josta tiedot ovat saatavissa, ilman että apien rajattu kutsumäärä ylittyy. Projektia varten kumpaankin
+palveluun luodaan kehittäjätunnus.
+
+Sovellus toteutetaan moderneilla web-tekniikoilla single-page aplikaaiona. 
+Kurssityön toteuttamiseen käytetään seuraavia kirjastoja ja tekniikoita: html, css, javascript, 
+jquery, bootsrap, ajax, php ja MongoDB. Kurssityö toteutetaan cloud9 idellä ja versionhallinta 
+toteutetaan gitlabilla.
+
+Kurssityön laatu pyritään pitämään korkealla kattavalla yksikkötestauksella, 
+jonka tulisi kattaa yli 80% lopputyön koodista. Javascriptin yksikkötestaus tehdään Jasminella ja
+php-koodi testataan PHPUnitilla.  Nettisivun tietoturva totetutetaan tarkistamalla kaikki asiakas
+ja serveripuolelle tuleva data.
