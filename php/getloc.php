@@ -4,9 +4,19 @@
     private $fields=array();
     private $dataStruct=array();
     
+    private $connection;
+    private $db;
+    
         public function __construct(){
-           $fields=array();
-           $columns=array();
+           $this->fields=array();
+           $this->columns=array();
+           $this->connection = new MongoClient();
+           $this->db = $connection->hslDatabase;
+           $this->collection = $db->information;
+        }
+        
+        public function __destruct(){
+            $this->connection->close();
         }
         
         public function getData(){
@@ -22,6 +32,8 @@
                 foreach ($fields as $kentta) {
                     array_push($tmparray, $kentta);
                 }
+                
+                if ($tmparray[0]!=""){
                 // RHKL00098;1010;24.943583;60.165314;347;2;0;1291404;1023
                 //  ID, route, lat, lng, bearing, direction, prevstop,currentstop, departure
                 $tmparray=array("ID" => $tmparray[0],
@@ -36,18 +48,22 @@
                                 );
                                 
                 array_push($this->dataStruct,$tmparray);
+                }
                 
             }
             
-            
-                echo json_encode($this->dataStruct);
-            
+            echo json_encode($this->dataStruct);
+
+           
         }
-        
         
     }
     
     
     $vastaanotin=new Receiver();
     $vastaanotin->getData();
+    
+   
+    
+    
 ?>

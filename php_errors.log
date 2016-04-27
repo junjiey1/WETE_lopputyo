@@ -9,3 +9,110 @@
 [27-Apr-2016 07:16:13 UTC] PHP Parse error:  syntax error, unexpected '$str' (T_VARIABLE), expecting function (T_FUNCTION) in /home/ubuntu/workspace/php/getloc.php on line 44
 [27-Apr-2016 07:16:54 UTC] PHP Parse error:  syntax error, unexpected '$str' (T_VARIABLE), expecting function (T_FUNCTION) in /home/ubuntu/workspace/php/getloc.php on line 44
 [27-Apr-2016 07:16:55 UTC] PHP Parse error:  syntax error, unexpected '$str' (T_VARIABLE), expecting function (T_FUNCTION) in /home/ubuntu/workspace/php/getloc.php on line 44
+[27-Apr-2016 08:08:21 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 08:08:21 UTC] PHP Stack trace:
+[27-Apr-2016 08:08:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 08:08:23 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 08:08:23 UTC] PHP Stack trace:
+[27-Apr-2016 08:08:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 08:09:55 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 08:09:55 UTC] PHP Stack trace:
+[27-Apr-2016 08:09:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 08:14:15 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 08:14:15 UTC] PHP Stack trace:
+[27-Apr-2016 08:14:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 08:21:48 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 08:21:48 UTC] PHP Stack trace:
+[27-Apr-2016 08:21:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 09:59:17 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 09:59:17 UTC] PHP Stack trace:
+[27-Apr-2016 09:59:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 11:36:52 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 11:36:52 UTC] PHP Stack trace:
+[27-Apr-2016 11:36:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 11:45:43 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 11:45:43 UTC] PHP Stack trace:
+[27-Apr-2016 11:45:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 11:45:45 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 11:45:45 UTC] PHP Stack trace:
+[27-Apr-2016 11:45:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:16:54 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:16:54 UTC] PHP Stack trace:
+[27-Apr-2016 13:16:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:16:54 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:18:42 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:18:42 UTC] PHP Stack trace:
+[27-Apr-2016 13:18:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:18:42 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:18:45 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:18:45 UTC] PHP Stack trace:
+[27-Apr-2016 13:18:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:18:45 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:19:42 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:19:42 UTC] PHP Stack trace:
+[27-Apr-2016 13:19:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:19:42 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:19:42 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:19:42 UTC] PHP Stack trace:
+[27-Apr-2016 13:19:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:19:42 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:19:43 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:19:43 UTC] PHP Stack trace:
+[27-Apr-2016 13:19:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:19:43 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:19:44 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:19:44 UTC] PHP Stack trace:
+[27-Apr-2016 13:19:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:19:44 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:19:44 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:19:44 UTC] PHP Stack trace:
+[27-Apr-2016 13:19:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:19:44 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:22:49 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/getloc.php on line 11
+[27-Apr-2016 13:22:50 UTC] PHP Stack trace:
+[27-Apr-2016 13:22:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:22:50 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:54
+[27-Apr-2016 13:33:50 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 51
+[27-Apr-2016 13:33:50 UTC] PHP Stack trace:
+[27-Apr-2016 13:33:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:33:50 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:58
+[27-Apr-2016 13:56:21 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 52
+[27-Apr-2016 13:56:21 UTC] PHP Stack trace:
+[27-Apr-2016 13:56:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:56:21 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:59
+[27-Apr-2016 13:57:19 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 52
+[27-Apr-2016 13:57:19 UTC] PHP Stack trace:
+[27-Apr-2016 13:57:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:57:19 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:59
+[27-Apr-2016 13:59:09 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 52
+[27-Apr-2016 13:59:09 UTC] PHP Stack trace:
+[27-Apr-2016 13:59:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 13:59:09 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:59
+[27-Apr-2016 14:08:14 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 52
+[27-Apr-2016 14:08:14 UTC] PHP Stack trace:
+[27-Apr-2016 14:08:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:08:14 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:59
+[27-Apr-2016 14:09:49 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:09:49 UTC] PHP Stack trace:
+[27-Apr-2016 14:09:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:09:49 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
+[27-Apr-2016 14:12:04 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:12:04 UTC] PHP Stack trace:
+[27-Apr-2016 14:12:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:12:04 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
+[27-Apr-2016 14:12:06 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:12:06 UTC] PHP Stack trace:
+[27-Apr-2016 14:12:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:12:06 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
+[27-Apr-2016 14:12:07 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:12:07 UTC] PHP Stack trace:
+[27-Apr-2016 14:12:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:12:07 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
+[27-Apr-2016 14:12:08 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:12:08 UTC] PHP Stack trace:
+[27-Apr-2016 14:12:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:12:08 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
+[27-Apr-2016 14:12:09 UTC] PHP Fatal error:  Call to a member function insert() on a non-object in /home/ubuntu/workspace/php/getloc.php on line 53
+[27-Apr-2016 14:12:09 UTC] PHP Stack trace:
+[27-Apr-2016 14:12:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
+[27-Apr-2016 14:12:09 UTC] PHP   2. Receiver->getData() /home/ubuntu/workspace/php/getloc.php:63
