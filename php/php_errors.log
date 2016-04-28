@@ -1,0 +1,642 @@
+[28-Apr-2016 07:48:03 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ';' or '{' in /home/ubuntu/workspace/php/background tasks/getloc.php on line 84
+[28-Apr-2016 07:48:19 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/php/background tasks/getloc.php on line 88
+[28-Apr-2016 07:53:02 UTC] PHP Fatal error:  Only variables can be passed by reference in /home/ubuntu/workspace/php/background tasks/getloc.php on line 104
+[28-Apr-2016 07:53:42 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/php/background tasks/getloc.php on line 104
+[28-Apr-2016 09:07:39 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/php/background tasks/getloc.php on line 107
+[28-Apr-2016 09:27:03 UTC] PHP Fatal error:  Uncaught exception 'MongoWriteConcernException' with message 'localhost:27017: The _id field cannot be changed from {_id: ObjectId('5721d48a2fa2806f924ea068')} to {_id: ObjectId('5721d76709609e780a8b4567')}.' in /home/ubuntu/workspace/php/background tasks/getloc.php:113
+Stack trace:
+#0 /home/ubuntu/workspace/php/background tasks/getloc.php(113): MongoCollection->update(Array, Array, Array)
+#1 /home/ubuntu/workspace/php/background tasks/getloc.php(121): Receiver->getRoute('1059')
+#2 {main}
+  thrown in /home/ubuntu/workspace/php/background tasks/getloc.php on line 113
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:44:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/php/background tasks/getloc.php on line 126
+[28-Apr-2016 09:44:06 UTC] PHP Stack trace:
+[28-Apr-2016 09:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:44:06 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:136
+[28-Apr-2016 09:44:06 UTC] PHP   3. array_push() /home/ubuntu/workspace/php/background tasks/getloc.php:126
+[28-Apr-2016 09:53:25 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1009 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:25 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:25 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:25 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:133
+[28-Apr-2016 09:53:25 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:25 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1009 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:25 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:25 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:25 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:53:25 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:26 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:26 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:26 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:26 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:133
+[28-Apr-2016 09:53:26 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:26 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:26 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:26 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:26 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:53:26 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:29 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1001 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:29 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:29 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:29 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:133
+[28-Apr-2016 09:53:29 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:29 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1001 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:29 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:29 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:29 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:53:29 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:32 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1003 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:32 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:32 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:32 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:133
+[28-Apr-2016 09:53:32 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:32 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1003 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:32 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:32 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:32 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:53:32 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:34 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 4&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:34 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:34 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:34 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:133
+[28-Apr-2016 09:53:34 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:53:34 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 4&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:53:34 UTC] PHP Stack trace:
+[28-Apr-2016 09:53:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:53:34 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:142
+[28-Apr-2016 09:53:34 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:53:34 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:09 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:09 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:09 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:09 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:56:09 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:09 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:09 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:09 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:09 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:135
+[28-Apr-2016 09:56:09 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:13 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1001 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:13 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:13 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:13 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:56:13 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:13 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1001 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:13 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:13 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:13 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:135
+[28-Apr-2016 09:56:13 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:16 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1003 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:16 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:16 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:16 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:56:16 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:16 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1003 3&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:16 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:16 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:16 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:135
+[28-Apr-2016 09:56:16 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:18 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 4&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:18 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:18 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:18 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:134
+[28-Apr-2016 09:56:18 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:56:18 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 4&direction=2): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:56:18 UTC] PHP Stack trace:
+[28-Apr-2016 09:56:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:56:18 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:56:18 UTC] PHP   3. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:135
+[28-Apr-2016 09:56:18 UTC] PHP   4. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:57:05 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 90
+[28-Apr-2016 09:57:05 UTC] PHP Stack trace:
+[28-Apr-2016 09:57:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:57:05 UTC] PHP   2. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:143
+[28-Apr-2016 09:57:05 UTC] PHP   3. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:90
+[28-Apr-2016 09:57:46 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 3&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 92
+[28-Apr-2016 09:57:46 UTC] PHP Stack trace:
+[28-Apr-2016 09:57:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:57:46 UTC] PHP   2. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:144
+[28-Apr-2016 09:57:46 UTC] PHP   3. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:92
+[28-Apr-2016 09:58:08 UTC] PHP Warning:  file_get_contents(http://83.145.232.209:10001/?type=routewgs&line=1006 4&direction=1): failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /home/ubuntu/workspace/php/background tasks/getloc.php on line 92
+[28-Apr-2016 09:58:08 UTC] PHP Stack trace:
+[28-Apr-2016 09:58:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 09:58:08 UTC] PHP   2. Receiver->getRoute() /home/ubuntu/workspace/php/background tasks/getloc.php:144
+[28-Apr-2016 09:58:08 UTC] PHP   3. file_get_contents() /home/ubuntu/workspace/php/background tasks/getloc.php:92
+[28-Apr-2016 10:24:36 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[28-Apr-2016 10:24:36 UTC] PHP Stack trace:
+[28-Apr-2016 10:24:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 10:24:36 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:177
+[28-Apr-2016 10:25:05 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[28-Apr-2016 10:25:05 UTC] PHP Stack trace:
+[28-Apr-2016 10:25:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 10:25:05 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:177
+[28-Apr-2016 10:31:17 UTC] PHP Fatal error:  Call to a member function getStop() on a non-object in /home/ubuntu/workspace/php/background tasks/getloc.php on line 172
+[28-Apr-2016 10:31:17 UTC] PHP Stack trace:
+[28-Apr-2016 10:31:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[28-Apr-2016 10:31:17 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:183

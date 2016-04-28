@@ -1880,3 +1880,5 @@
 [27-Apr-2016 16:09:31 UTC] PHP Stack trace:
 [27-Apr-2016 16:09:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/getloc.php:0
 [27-Apr-2016 16:09:31 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:80
+[27-Apr-2016 16:25:44 UTC] PHP Parse error:  syntax error, unexpected 'time' (T_STRING), expecting ')' in /home/ubuntu/workspace/php/getloc.php on line 66
+[27-Apr-2016 16:26:29 UTC] PHP Parse error:  syntax error, unexpected 'time' (T_STRING) in /home/ubuntu/workspace/php/getloc.php on line 66
