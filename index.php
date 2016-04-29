@@ -3,6 +3,9 @@
 # URI parser helper functions
 # ---------------------------
 
+//todo!!!!
+//tee apiin ominaisus jolla voi hakea avain-arvoparilal itse vehicles?dir=50;
+
 class RestApi
 {
     
@@ -59,13 +62,13 @@ class RestApi
     /////////////////////////////////////////////////////////////////////////////////////////////
     
     // Rest-apin toiminnalisuus
-    private function getVehicles($parameters = null,$collection="")
+    private function getData($parameters = null,$collection="",$hakuavain)
     {
+        
         //luodaan taulukko jonne tietokantakysely luodaan
         $ajoneuvoarray = array();
-         $id = urldecode($parameters["id"]); //haetaan ajoneuvon ID
-        
-        
+         $id = urldecode($parameters["id"]); //ID on hakuparametri!!!
+    
         //jos parametrit on annettu
         if (strlen($collection)>0) { 
             
@@ -75,10 +78,9 @@ class RestApi
             if ($id==""){  //tarkistetaan, minkä id:n käyttäjä on asettanut!!!!
                 $ajoneuvot = $this->collection->find(); //Haetaan mondodbstä kaikki ajoneuvot
             } else {
-                $ajoneuvot = $this->collection->find(array("ID"=>$id)); //haetaan tietty ajoneuvo
+                $ajoneuvot = $this->collection->find(array($hakuavain=>$id)); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
             }
-            
-
+        
             if ($ajoneuvot->count() > 0) { //Jos ajoneuvoja
                 
                 //työnnetään vastausket taulukkoon
@@ -119,12 +121,15 @@ class RestApi
         $parameters=preg_replace('/[^A-Za-z0-9\-]/', '', $parameters);
         
         
-        echo $resource[0] . $request_method .$resource[1] == "vehicle";
         //Ohjataan pyynnot parametrien perusteella oikeisiin paikkoihin
         if ($resource[0] == "API") { //Apin tunnus
-            if ($request_method == "GET" && $resource[1] == "vehicle") { //jos metodi on get ja "luokka" vehicle
-                $this->getVehicles($parameters); //Käytetään metodia getVehicle!
-            } else {
+            if ($request_method == "GET" && $resource[1] == "vehicles") { //jos metodi on get ja "luokka" vehicle
+                $this->getData($parameters,"vehicles","ID"); //haetaan ajoneuvot
+            } else if ($request_method == "GET" && $resource[1] == "stops"){
+                $this->getData($parameters,"Stops","Line"); //haetaan pysäkit 
+            } else if ($request_method == "GET" && $resource[1] == "routes"){
+                $this->getData($parameters,"Routes","Line"); //haetaan pysäkit 
+            }else {
                 http_response_code(405); # Method not allowed
             }
         } else {
