@@ -1,10 +1,14 @@
+
+
 (function (window) {
+  
+  
     $(document).ready(function(){
         
-        $('#Otsikko').append('<h1>Bussitutka</h1>');
-        
-        
+
+        //lataa kaikki ajoneuvot kartalle
     });
+    
     function initialize() {
     var fenway = {lat: 42.345573, lng: -71.098326};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -12,7 +16,7 @@
     zoom: 14
      });
     var panorama = new google.maps.StreetViewPanorama(
-      document.getElementById('pano'), {
+      document.getElementById('loc'), {
         position: fenway,
         pov: {
           heading: 34,

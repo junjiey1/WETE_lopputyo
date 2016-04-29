@@ -2,19 +2,14 @@
     color: blue;
     margin-bottom: 0px;
     padding:0px;
-    width:200px;
+ 
 }
 
-#valikko{
-    padding: 0px;
-    color:red;
-    width:300px;
-   
-}
 html, body { height: 100%; 
              width: 100%;
-             margin: 0; 
-             padding: 0; }
+             margin-bottom:100px;
+             padding-bottom:100px;
+           }
 #map { 
     height: 100%; 
 }

@@ -168,7 +168,7 @@
             foreach($ajoneuvoarray as $routeid){
                 
                 for ($suunta=1;$suunta<=2;$suunta++){
-                    //$this->getRoute($routeid,$suunta);
+                    $this->getRoute($routeid,$suunta);
                     $this->getStop($routeid,$suunta);
                 }
                 
@@ -177,8 +177,13 @@
         }
     }
     
-    $vastaanotin=new Receiver();
-    $vastaanotin->getData();
-    $vastaanotin->getRoutes();
+    function main (){
+        $vastaanotin=new Receiver();
+        $vastaanotin->getRoutes();
+        $vastaanotin->getData();
+       
+    }
+    
+    main();
     
 ?>

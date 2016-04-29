@@ -1,4 +1,9 @@
-"use strict";
+
+
+
+$(document).ready(function(){
+    
+}
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
