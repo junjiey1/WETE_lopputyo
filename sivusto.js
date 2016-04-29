@@ -1,11 +1,7 @@
 
-
-(function (window) {
-  
-  
     $(document).ready(function(){
         
-
+        getSync();
         //lataa kaikki ajoneuvot kartalle
     });
     
@@ -24,6 +20,22 @@
         }
       });
     map.setStreetView(panorama);
+    
 }
+
+
+   function getSync() {
+        var xhttp=new XMLHttpRequest();
         
-})(window);
+        xhttp.onreadystatechange=function(){
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                 $('#Otsikko').val(xhttp.responseText); //tässä vastaus
+            }
+        }
+        
+          xhttp.open("GET", "https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/vehicle?id=ALL", true);
+          xhttp.send();
+   }
+   
+   
+        
