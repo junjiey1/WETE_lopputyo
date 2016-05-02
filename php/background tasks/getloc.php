@@ -61,8 +61,8 @@
                     //  ID, route, lat, lng, bearing, direction, prevstop,currentstop, departure
                     $tmparray=array("ID" => $tmparray[0],
                                 "Route"=> $tmparray[1],
-                                "lat" => $tmparray[2],
-                                "lng"=> $tmparray[3],
+                                "lng" => $tmparray[2],
+                                "lat"=> $tmparray[3],
                                 "angle" => $tmparray[4],
                                 "direction" => $tmparray[5],
                                 "prevStop" => $tmparray[6],
@@ -110,18 +110,18 @@
                 }
             }
             
-            $route=array("Line"=>$line,"Dir"=>$dir ,"Points" =>$route);
+            $route=array("ID"=>$line,"Dir"=>$dir ,"Points" =>$route);
             //updaten parametrit query, update, upsert
             
             //$this->collection->insert($route);
-            $this->collection->update(array("Line" => $route['Line'], "Dir"=>$dir ), $route, array("upsert"=> TRUE)); //Jos on olemassa jo niin päivitetään, muuten luodaan uusi dokumentti($route);
+            $this->collection->update(array("ID" => $route['ID'], "Dir"=>$dir ), $route, array("upsert"=> TRUE)); //Jos on olemassa jo niin päivitetään, muuten luodaan uusi dokumentti($route);
             return true;
         }
         
         public function getStop($line="",$dir=1){
             $line=str_replace(" ","%20",$line);
             $this->db = $this->connection->Data;
-            $this->collection = $this->db->Stops; //soittaa vehicles kokoelmaan
+            $this->collection = $this->db->stops; //soittaa vehicles kokoelmaan
             
             
             $data=file_get_contents("http://83.145.232.209:10001/?type=stoplocations&line=".$line."&direction=".$dir); //Hakee reittiopas apista liikenteessä olevat linjurit
@@ -145,11 +145,11 @@
                 }
             }
             
-            $route=array("Line"=>$line,"Dir"=>$dir ,"Stops" =>$route);
+            $route=array("ID"=>$line,"Dir"=>$dir ,"Stops" =>$route);
             //updaten parametrit query, update, upsert
             
             //$this->collection->insert($route);
-            $this->collection->update(array("Line" => $route['Line'], "Dir"=>$dir ), $route, array("upsert"=> TRUE)); //Jos on olemassa jo niin päivitetään, muuten luodaan uusi dokumentti($route);
+            $this->collection->update(array("ID" => $route['ID'], "Dir"=>$dir ), $route, array("upsert"=> TRUE)); //Jos on olemassa jo niin päivitetään, muuten luodaan uusi dokumentti($route);
             return true;
         }
         

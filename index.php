@@ -12,6 +12,7 @@ class RestApi
     private $connection = null;
     private $db = null;
     private $collection = null;
+    private $collections=null;
     
     /////////////////////////////////////////////////////////////////////////////////////////////
     //apumetodit url-osoitteen kösittelyyn
@@ -59,6 +60,7 @@ class RestApi
     
     private function check (&$param){
         $param=preg_replace('/[^A-Za-z0-9\.]/', '', $param);
+        
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,15 +75,15 @@ class RestApi
         if (strlen($collection)>0) { 
             
              //Osoitetaan oikeaan kokoelmaan
-             $this->collection = $this->db->$collection; //osoittaa vehicles kokoelmaan
+             $this->collection = $this->db->$collection; //haluttuun kokoelmaan
         
             if (count($parameters)==0){  //tarkistetaan, minkä id:n käyttäjä on asettanut!!!!
-                $ajoneuvot = $this->collection->find(); //Haetaan mondodbstä kaikki ajoneuvot
+                $ajoneuvot = $this->collection->find(); //Haetaan mondodbstä kaikki kentät
             } else {
                 $ajoneuvot = $this->collection->find($parameters); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
             }
         
-            if ($ajoneuvot->count() > 0) { //Jos ajoneuvoja
+            if ($ajoneuvot->count() > 0) { //Jos tuloksia haulla
                 
                 //työnnetään vastausket taulukkoon
                 foreach ($ajoneuvot as $kulkuvaline) {
@@ -92,13 +94,18 @@ class RestApi
                 http_response_code(200); //Onnistuu
                 
             } else {
-                http_response_code(200);
+                http_response_code(204); //ei sisaltoa;
             }
         } else {
-            http_response_code(204); # ei sisaltoa
+            http_response_code(404); # virhe
         }
     }
     
+    private function SetData($findQuery = null,$updateValues,$collection=""){
+        
+    }
+    
+ 
     
     //Updatemetodi omien ajoneuvojen lisäämiseen!
     
@@ -109,7 +116,10 @@ class RestApi
         //luodaan tietokantayhteys
         $this->connection = new MongoClient();
         // select a database
-        $this->db         = $this->connection->Data;
+        $this->db  = $this->connection->Data;
+        
+        $this->collections=$this->db->getCollectionNames(); //hakee tietokannan kokoelmat!
+        
         
         //haetaan parametrit urlista
         $resource       = $this->getResource();
@@ -129,25 +139,40 @@ class RestApi
              $this->check($value);
              
              if (strlen($title)==0){
-                $parameters=array();
+                $parameters=null;
                 break;
              }
         }
         
+        ////////////////////////////////////////////////////////////////////////////////
+        //NON-REST API
         //Ohjataan pyynnot parametrien perusteella oikeisiin paikkoihin
-        if ($resource[0] == "API") { //Apin tunnus
-            if ($request_method == "GET" && $resource[1] == "vehicles") { //jos metodi on get ja "luokka" vehicle
-                $this->getData($parameters,"vehicles"); //haetaan ajoneuvot
-            } else if ($request_method == "GET" && $resource[1] == "stops"){
-                $this->getData($parameters,"Stops"); //haetaan pysäkit 
-            } else if ($request_method == "GET" && $resource[1] == "routes"){
-                $this->getData($parameters,"Routes"); //haetaan pysäkit 
-            }else {
-                http_response_code(405); # Method not allowed
+        if ($resource[0] == "SEARCH") { //hakuapi
+            if ($request_method == "GET" && in_array($resource[1],$this->collections)) { //jos haettu kokoelma on tietokannassa
+                $this->getData($parameters,$resource[1]); //haetaan ajoneuvot
+            }
+        } 
+        //////////////////////////////////////////////////////////////////////////////////
+        
+        
+        /////////////////////////////////////////////////////////////////////////////////
+        //REST API
+        if ($resource[0] == "API"){ 
+            if ($request_method == "GET" && in_array($resource[1],$this->collections) ){ //Jos haetaan kokoelmasta jotain!
+            
+                if (count($resource)>2 && $resource[2]!="" ){
+                    $this->getData(array("ID"=>$resource[2]),$resource[1]);
+                } else {
+                    $this->getData(null,$resource[1]);
+                }
+            } else {
+                http_response_code(204); //ei sisaltoa
             }
         } else {
             http_response_code(405); # Method not allowed
-        }
+        } 
+        ////////////////////////////////////////////////////////////////////////////////////
+        
     }
     
     

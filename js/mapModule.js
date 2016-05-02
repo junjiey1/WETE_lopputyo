@@ -11,9 +11,11 @@
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: helsinki,
           zoom: 15
-          
-          
         });
+        
+        
+        //window.App.map.setMarker({lat: 60.1699, lng: 24.9384},"Helsinki");
+        window.setTimeout(window.App.map.setMarker(), 5000);
      }
      
      
@@ -29,6 +31,19 @@
                  for (var x in this.vehicles){
                      console.log(x[0].lng);
                  }
+                 
+                
+                 //hae täällä sijainnit ja kutsu tarvittava määrä setMarkereita
+                 //setmarker({lng: 833, lat: 179732},"Otsikko");
+                 for(var i=0; i<this.vehivles.length; i++){
+                     
+                     var pos= new google.map.LatLng(this.vehicles[i]["lat"], this.vehicles[i]["lng"]);
+                     var markerTitle = this.vehicles[i]["ID"];
+                     
+                     
+                     window.App.map.setMarker(pos , markerTitle);
+                 } 
+                 
             }
         }
         
@@ -40,15 +55,11 @@
     
     
     
-    Map.prototype.setMarker = function setMarker(){
-        
-        
-            var helsinki = {lat: 60.1699, lng: 24.9384};
-            
+    Map.prototype.setMarker = function setMarker(pos, markerTitle){
             var marker = new google.maps.Marker({
-            position: helsinki,
-            title:"Hello World!"
-            });
+                position: pos,
+                title:markerTitle,
+                });
             marker.setMap(this.map);
     }
     
@@ -62,7 +73,6 @@
     window.App.map=new Map();
     
     window.App.map.initMap();
-    window.App.map.getSynch();
-    window.App.map.setMarker();
+    
     
 }(window))
