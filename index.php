@@ -15,7 +15,7 @@ class RestApi
     private $collections=null;
     
     /////////////////////////////////////////////////////////////////////////////////////////////
-    //apumetodit url-osoitteen kösittelyyn
+    //apumetodit url-osoitteen käsittelyyn
     
     private function getResource()
     {
@@ -70,6 +70,7 @@ class RestApi
     {
         //luodaan taulukko jonne tietokantakysely luodaan
         $ajoneuvoarray = array();
+        $dontGet=array("password"=>0,"_id"=>0);
         
         //jos parametrit on annettu
         if (strlen($collection)>0) { 
@@ -78,9 +79,9 @@ class RestApi
              $this->collection = $this->db->$collection; //haluttuun kokoelmaan
         
             if (count($parameters)==0){  //tarkistetaan, minkä id:n käyttäjä on asettanut!!!!
-                $ajoneuvot = $this->collection->find(); //Haetaan mondodbstä kaikki kentät
+                $ajoneuvot = $this->collection->find(array(),$dontGet); //Haetaan mondodbstä kaikki kentät
             } else {
-                $ajoneuvot = $this->collection->find($parameters); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
+                $ajoneuvot = $this->collection->find($parameters,$dontGet); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
             }
         
             if ($ajoneuvot->count() > 0) { //Jos tuloksia haulla
@@ -101,13 +102,56 @@ class RestApi
         }
     }
     
-    private function SetData($findQuery = null,$updateValues,$collection=""){
+    
+    //Metodi jolla tietokantaan päivitetään tai syötetään dataa!
+    private function SetData($findQuery = null,$updateValues=null,$collection=""){ 
+        
+        if ($collection!="" && $findQuery && $updateValues){ //Jos annettu parametrit
+            $this->collection = $this->db->$collection; //haluttuun kokoelmaan
+            $this->collection->update($findQuery, $updateValues, array("upsert"=> TRUE)); //Syötetään tiedot tietokantaan!
+        }
         
     }
     
- 
-    
     //Updatemetodi omien ajoneuvojen lisäämiseen!
+    
+    private function updateCars(){
+        
+        $this->collection = $this->db->usercars;
+        $params=$_POST;
+        $sameID=0;
+        $passwordMatch=0;
+        
+        if (gettype ($params)=="array" && count($params)<5){
+            
+            foreach ($params as $avain=>$arvo){
+                $this->check($avain);
+                $this->check($arvo);
+            }
+            
+             $id=array("ID"=>$params['ID']); //luodaan käsky idhaulle
+             $idAndPw=array("ID"=>$params['ID'],"password"=>$params['password']); //id ja salasanan combo
+             $all=array_merge($idAndPw,array("Lng"=>$params['Lng'],"lat"=>$params['Lat'],"TimeStamp"=>time())); //yhdistetään sijainti, id ja salasana
+            
+             $sameID= $this->collection->find($id)->count(); //onko jo id olemassa
+             $passwordMatch= $this->collection->find($idAndPw)->count(); //onko salasana oikein?
+            
+             if (strlen($params['ID'])>=5){     //jos vähintään 5 merkkiä käyttäjänimessä
+                if ($sameID==1){ //Päivitetään olemassaolevaa
+                    if ($passwordMatch==1){ //jos salasana on oikein
+                        $this->SetData($id,$all,"usercars"); //pävitetään sijaintia
+                         http_response_code(200);
+                     } else {
+                        http_response_code(401); //epaonnistui!
+                     }
+                 } else { //luodaan uusi
+                  $this->SetData($id,$all,"usercars"); //luodaan uusi auto
+                     http_response_code(200);
+                }
+             }
+           
+        }
+    }
     
    //////////////////////////////////////////////////////////////////////////////////////////////////
     //Konstruktori    
@@ -121,11 +165,10 @@ class RestApi
         $this->collections=$this->db->getCollectionNames(); //hakee tietokannan kokoelmat!
         
         
-        //haetaan parametrit urlista
+        //haetaan parametrit url-osoitteesta (get)
         $resource       = $this->getResource();
         $request_method = $this->getMethod();
         $parameters     = $this->getParameters();
-        
         
         //siivotaan ne!
         //poistetaan erikoismerkit
@@ -134,7 +177,7 @@ class RestApi
         $this->check($parameters);
         
         
-        foreach($parameters as $title=>$value){
+        foreach($parameters as $title=>$value){ //käydään vielä taulukko läpi
              $this->check($title);
              $this->check($value);
              
@@ -144,37 +187,38 @@ class RestApi
              }
         }
         
-        ////////////////////////////////////////////////////////////////////////////////
+        
         //NON-REST API
         //Ohjataan pyynnot parametrien perusteella oikeisiin paikkoihin
         if ($resource[0] == "SEARCH") { //hakuapi
             if ($request_method == "GET" && in_array($resource[1],$this->collections)) { //jos haettu kokoelma on tietokannassa
-                $this->getData($parameters,$resource[1]); //haetaan ajoneuvot
+                $this->getData($parameters,$resource[1]); //haetaan tiedot parametreilla
             }
         } 
-        //////////////////////////////////////////////////////////////////////////////////
         
         
-        /////////////////////////////////////////////////////////////////////////////////
-        //REST API
-        if ($resource[0] == "API"){ 
-            if ($request_method == "GET" && in_array($resource[1],$this->collections) ){ //Jos haetaan kokoelmasta jotain!
+        if ($resource[0] == "API"){ //rest api!
+            if ($request_method == "GET" && in_array($resource[1],$this->collections) ){ //etsii löytyyko haluttua luokkaa kokoelmasta
             
-                if (count($resource)>2 && $resource[2]!="" ){
-                    $this->getData(array("ID"=>$resource[2]),$resource[1]);
+                if (count($resource)>2 && $resource[2]!="" ){ //Jos luokka on annettu ja perässä vielä parametri
+                    $this->getData(array("ID"=>$resource[2]),$resource[1]); //haetaan annetulla parametrilla
                 } else {
-                    $this->getData(null,$resource[1]);
+                    $this->getData(null,$resource[1]); //Muuten näytetään kaikki
                 }
-            } else {
-                http_response_code(204); //ei sisaltoa
+
+            } else if ($request_method == "POST" && $resource[1]=="usercars"){//jos apille tulee post metodi usercars tietueeseen!
+                $this->updateCars();
+                
+            } else { //annetaan käytettävissä olevat luokat
+                    echo json_encode(array("Available classes" =>$this->collections));
+                    http_response_code(200);
             }
         } else {
             http_response_code(405); # Method not allowed
         } 
-        ////////////////////////////////////////////////////////////////////////////////////
+        
         
     }
-    
     
     ///////////////////////////////////////////////////////////////////////////////
     //destruktori

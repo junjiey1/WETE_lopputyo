@@ -4,6 +4,7 @@
     function Map(){
         this.map;
         this.vehicles;
+        this.markers=[];
     }
     
     Map.prototype.initMap=function() {
@@ -14,8 +15,8 @@
         });
         
         
-        //window.App.map.setMarker({lat: 60.1699, lng: 24.9384},"Helsinki");
-        window.setTimeout(window.App.map.setMarker(), 5000);
+        window.App.map.setMarker(pos, markerTitle);
+        //window.setTimeout(window.App.map.setMarker(), 5000);
      }
      
      
@@ -36,14 +37,14 @@
                  //hae täällä sijainnit ja kutsu tarvittava määrä setMarkereita
                  //setmarker({lng: 833, lat: 179732},"Otsikko");
                  for(var i=0; i<this.vehivles.length; i++){
-                     
-                     var pos= new google.map.LatLng(this.vehicles[i]["lat"], this.vehicles[i]["lng"]);
+                     var latx = this.vehicles[i]["lat"];
+                     var lngy = this.vehicles[i]["lng"];
+                     var pos= new google.map.LatLng(latx , lngy);
                      var markerTitle = this.vehicles[i]["ID"];
-                     
-                     
-                     window.App.map.setMarker(pos , markerTitle);
+                     Map.prototype.setMarker(pos, markerTitle);
                  } 
                  
+               
             }
         }
         
@@ -60,18 +61,17 @@
                 position: pos,
                 title:markerTitle,
                 });
+            this.markers.push(marker);    
             marker.setMap(this.map);
     }
     
   
-  
-    
+
     
     
     
     window.App=window.app || {};
     window.App.map=new Map();
-    
     window.App.map.initMap();
     
     

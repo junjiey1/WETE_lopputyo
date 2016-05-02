@@ -178,9 +178,18 @@
     }
     
     function main (){
+        $maxTime=30*60;
         $vastaanotin=new Receiver();
+        $timeStep=5;
+        
+        while ($maxTime>=0){
+            $vastaanotin->getData();
+            $maxTime-=5;
+            sleep(5);
+        }
+        
         $vastaanotin->getRoutes();
-        $vastaanotin->getData();
+        
        
     }
     

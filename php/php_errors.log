@@ -640,3 +640,23 @@ Stack trace:
 [28-Apr-2016 10:31:17 UTC] PHP Stack trace:
 [28-Apr-2016 10:31:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
 [28-Apr-2016 10:31:17 UTC] PHP   2. Receiver->getRoutes() /home/ubuntu/workspace/php/background tasks/getloc.php:183
+[02-May-2016 12:02:13 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[02-May-2016 12:02:13 UTC] PHP Stack trace:
+[02-May-2016 12:02:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[02-May-2016 12:02:13 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:196
+[02-May-2016 12:02:13 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:182
+[02-May-2016 12:02:17 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[02-May-2016 12:02:17 UTC] PHP Stack trace:
+[02-May-2016 12:02:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[02-May-2016 12:02:17 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:196
+[02-May-2016 12:02:17 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:182
+[02-May-2016 12:03:47 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[02-May-2016 12:03:47 UTC] PHP Stack trace:
+[02-May-2016 12:03:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[02-May-2016 12:03:47 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:196
+[02-May-2016 12:03:47 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:182
+[02-May-2016 12:09:23 UTC] PHP Fatal error:  Class 'MongoClient' not found in /home/ubuntu/workspace/php/background tasks/getloc.php on line 24
+[02-May-2016 12:09:23 UTC] PHP Stack trace:
+[02-May-2016 12:09:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[02-May-2016 12:09:23 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:196
+[02-May-2016 12:09:23 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:182
