@@ -55,30 +55,30 @@ class RestApi
         return $method;
     }
     
-    private function dataGetter()
-    {
-        
+
+    
+    private function check (&$param){
+        $param=preg_replace('/[^A-Za-z0-9\.]/', '', $param);
     }
+    
     /////////////////////////////////////////////////////////////////////////////////////////////
     
-    // Rest-apin toiminnalisuus
-    private function getData($parameters = null,$collection="",$hakuavain)
+    // Rest-apin toiminnalisuus hakujen suhteen!
+    private function getData($parameters = null,$collection="")
     {
-        
         //luodaan taulukko jonne tietokantakysely luodaan
         $ajoneuvoarray = array();
-         $id = urldecode($parameters["id"]); //ID on hakuparametri!!!
-    
+        
         //jos parametrit on annettu
         if (strlen($collection)>0) { 
             
              //Osoitetaan oikeaan kokoelmaan
              $this->collection = $this->db->$collection; //osoittaa vehicles kokoelmaan
         
-            if ($id==""){  //tarkistetaan, minkä id:n käyttäjä on asettanut!!!!
+            if (count($parameters)==0){  //tarkistetaan, minkä id:n käyttäjä on asettanut!!!!
                 $ajoneuvot = $this->collection->find(); //Haetaan mondodbstä kaikki ajoneuvot
             } else {
-                $ajoneuvot = $this->collection->find(array($hakuavain=>$id)); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
+                $ajoneuvot = $this->collection->find($parameters); //haetaan hakuparametrilla Kentästä joka annettiin parametrina
             }
         
             if ($ajoneuvot->count() > 0) { //Jos ajoneuvoja
@@ -99,6 +99,9 @@ class RestApi
         }
     }
     
+    
+    //Updatemetodi omien ajoneuvojen lisäämiseen!
+    
    //////////////////////////////////////////////////////////////////////////////////////////////////
     //Konstruktori    
     public function __construct()
@@ -116,19 +119,29 @@ class RestApi
         
         //siivotaan ne!
         //poistetaan erikoismerkit
-        $resource=preg_replace('/[^A-Za-z0-9\-]/', '', $resource);
-        $request_method=preg_replace('/[^A-Za-z0-9\-]/', '', $request_method);
-        $parameters=preg_replace('/[^A-Za-z0-9\-]/', '', $parameters);
+        $this->check($resource);
+        $this->check($request_method);
+        $this->check($parameters);
         
+        
+        foreach($parameters as $title=>$value){
+             $this->check($title);
+             $this->check($value);
+             
+             if (strlen($title)==0){
+                $parameters=array();
+                break;
+             }
+        }
         
         //Ohjataan pyynnot parametrien perusteella oikeisiin paikkoihin
         if ($resource[0] == "API") { //Apin tunnus
             if ($request_method == "GET" && $resource[1] == "vehicles") { //jos metodi on get ja "luokka" vehicle
-                $this->getData($parameters,"vehicles","ID"); //haetaan ajoneuvot
+                $this->getData($parameters,"vehicles"); //haetaan ajoneuvot
             } else if ($request_method == "GET" && $resource[1] == "stops"){
-                $this->getData($parameters,"Stops","Line"); //haetaan pysäkit 
+                $this->getData($parameters,"Stops"); //haetaan pysäkit 
             } else if ($request_method == "GET" && $resource[1] == "routes"){
-                $this->getData($parameters,"Routes","Line"); //haetaan pysäkit 
+                $this->getData($parameters,"Routes"); //haetaan pysäkit 
             }else {
                 http_response_code(405); # Method not allowed
             }

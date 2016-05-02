@@ -1,29 +1,27 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="sivusto.css"/>
-    
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+      <link href ="sivusto.css" type ="text/css" rel ="stylesheet" />
   </head>
   <body>
-   
-    <div id=Otsikko>
-      <h1>Bussitutka</h1>
-      <button type="button" onclick="chengeNight()">Night Mode</button>
-      <a href="#" class="btn btn-default" id="button2">Day Mode</a>
-    </div>
-    
+
     <div id="map"></div>
-    <div id="loc"></div>
-    
-  
-   <script src="js/map.js"> </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH2Wgn7VjjOprO4A9A46KcpMQ9Oo72-o4&libraries=visualization&callback=initMap">
-    </script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="sivusto.js"></script>
-    
+
+
+    <script src="js/mapModule.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH2Wgn7VjjOprO4A9A46KcpMQ9Oo72-o4&callback=window.App.map.initMap"
+    async defer></script>
   </body>
 </html>
