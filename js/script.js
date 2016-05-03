@@ -46,8 +46,21 @@
   }
 
     Map.prototype.loadRoutes=function(){ //lataa reitit
-        $.get(this.apiPath +"vehicles/",function(result){
-            alert(result);
+        $.get(this.apiPath +"routes/",function(result){
+            var objects=JSON.parse(result); //parsetaan vastaus
+            
+            for (var linja=0; linja<objects.length;linja++){
+                var tmpRoute=[];
+                
+                for (var reittipiste=0; reittipiste<objects[linja]["Points"].length;reittipiste++){
+                    var tmpPoint={
+                        "lat":objects[linja]['Points'][reittipiste]['Lat'],
+                        "lng":objects[linja]['Points'][reittipiste]['lng'],
+                    };
+                    tmpRoute.push(tmpPoint);
+                }
+                this.setPolyLine(tmpRoute,"Jee");
+            }
         })
     }
 
