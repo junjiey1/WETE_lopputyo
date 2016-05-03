@@ -9,3 +9,25 @@ html, body {
 #map {
     height: 100%;
 }
+
+#menu *{
+  margin-top: 1px;
+  z-index: 20;
+}
+
+.navbar-right{
+ padding-top:8px;
+}
+
+#menu .navbar-toggle{
+  margin-top:12px;
+  background:#383838  ;
+}
+
+#menu {
+    min-height: px;
+    color:#ffffff;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}

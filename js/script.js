@@ -1,42 +1,68 @@
-(function mapModule(window){
+(function mapModule(window) {
     'use strict';
-    var map;
-    
-    function Map(){
-        this.map;    
+
+    function Map() { //mapin konstruktori
+        this.map;
         this.vehicles;
-        this.markers=[];
+        this.markers = [];
+        this.routes=[];
+        this.apiPath="https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/";
     }
-    
-     
-    Map.prototype.setMarker = function setMarker(pos, markerTitle){
-            var marker = new google.maps.Marker({
-                position: pos,
-                title:markerTitle,
-                });
-            this.markers.push(marker);    
-            marker.setMap(this.map);
+
+     Map.prototype.initMap = function() { //mapin alustusmetodi
+        this.map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 60.1699,
+                lng: 24.9384
+            },
+            zoom: 15
+        });
     }
-    
-    
-    
-    window.App=window.app || {};
-    
-    
-    
+
+    //Lisää merkin kartalle
+    Map.prototype.setMarker = function setMarker(pos, markerTitle) {
+        var marker = new google.maps.Marker({
+            position: pos,
+            title: markerTitle,
+        });
+        this.markers.push(marker); //ja työntää sen taulukkoon
+        marker.setMap(this.map);
+    }
+
+    //luo polylinen kartalle!
+    Map.prototype.setPolyLine = function(route,routeTitle) {
+      var polyLine = new google.maps.Polyline({
+          path: route,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+          title: routeTitle
+          
+      });
+
+      polyLine.setMap(this.map);
+      this.routes.push(polyLine);
+  }
+
+    Map.prototype.loadRoutes=function(){ //lataa reitit
+        $.get(this.apiPath +"vehicles/",function(result){
+            alert(result);
+        })
+    }
+
+    window.App = window.app || {};
+    window.App.Map=Map; //sijoitetaan luokkan App namespaceen 
+
+
 }(window))
 
 
-$(document).ready(function(){
-    
-initMap=function (){
-         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 60.1699, lng:24.9384 },
-          zoom: 15
-        });
-    }
-    initMap();
-    
-})
+$(document).ready(function() { //tehdään alustus täällä
+    'use strict';
+     
+     var map=new App.Map();
+     map.initMap();
+     map.loadRoutes();
 
-  
+})
