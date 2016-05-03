@@ -1,17 +1,90 @@
+
+
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-      <link href ="sivusto.css" type ="text/css" rel ="stylesheet" />
-  </head>
-  <body>
-
-    <div id="map"></div>
-
-
-    <script src="js/mapModule.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH2Wgn7VjjOprO4A9A46KcpMQ9Oo72-o4&callback=window.App.map.initMap"
-    async defer></script>
-  </body>
+   <head>
+      <title>Simple Map</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+      <style>
+         html, body {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+         }
+         #map {
+         height: 100%;
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="menu">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>                        
+               </button>
+               <a class="navbar-brand" href="#">
+               <span class="glyphicon glyphicon-map-marker">Sporatutka</span>
+               </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#"> Linjat</a></li>
+                  <li><a href="#">Street view</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li>
+                     <a class="btn btn-social-icon btn-twitter">
+                     <span class="fa fa-twitter"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a class="btn btn-social-icon btn-facebook">
+                     <span class="fa fa-facebook"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a class="btn btn-social-icon btn-instagram">
+                     <span class="fa fa-instagram"></span>
+                     </a>
+                  </li>
+                  <li>
+                     <a class="btn btn-social-icon btn-pinterest">
+                     <span class="fa fa-pinterest"></span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div id="map"></div>
+      <script>
+         var map;
+         function initMap() {
+           map = new google.maps.Map(document.getElementById('map'), {
+             center: {lat: 60, lng: 24},
+             zoom: 8
+           });
+         }
+      </script>
+      <!-- Google maps-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH2Wgn7VjjOprO4A9A46KcpMQ9Oo72-o4&callback=initMap"
+         async defer></script>
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script> <!-- TÄMÄ POIS -->
+      <!-- style-->  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!-- theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <!-- somenapit-->
+      <link rel="stylesheet" href="library/socialpages/bootstrap-social.css" style="text/css">
+      <!-- Font-awesome-->
+      <link rel="stylesheet" href="library/font/css/font-awesome.css" style="text/css">
+   </body>
 </html>
+

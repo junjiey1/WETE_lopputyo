@@ -14,8 +14,7 @@
           zoom: 15
         });
         
-        
-        window.App.map.setMarker(pos, markerTitle);
+        ;
         //window.setTimeout(window.App.map.setMarker(), 5000);
      }
      
