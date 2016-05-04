@@ -19,22 +19,14 @@
                     lng: 24.9384
                 },
                 zoom: 15
-                
-                
+
             });
-            /*
-            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-            var icons ={
-                Tram: {
-                    name:'Tram',
-                    icon: iconBase + '/image/Tran_icon.png'
-                },
-                stop: {
-                    name:'stops',
-                    icon: iconBase + ' /image/bus_stop2.png'
-                }
-            }
-            */
+       
+        }
+        
+        this.update=function(){ //kutsutaan tietyn väliajan välein
+            this.getVehicles();
+            this.getUsers();
         }
 
         this.setMarker = function(pos, markerTitle) { //luodaan uusi merkki
@@ -47,9 +39,13 @@
                 }
             }
             
-            if (markerTitle.search("STOP")>=0){
+            if (markerTitle.search("STOP")>=0){ //jos on bussipysäkki niin asetetaan musta nuoli kuvakkeeksi
                 mIcon={ path: google.maps.SymbolPath.BACKWARD_OPEN_ARROW,
                         scale: 2}
+            } else if (markerTitle.search("usercars")>=0){
+                mIcon={ path: google.maps.SymbolPath.CIRCLE,
+                        scale: 6,
+                    strokeColor: '#00FF00'}
             } else {
                 mIcon="";
             }
@@ -70,7 +66,7 @@
             var polyLine = new google.maps.Polyline({
                 path: route,
                 geodesic: true,
-                strokeColor: '#FF0000',
+                strokeColor: '#FF00FF',
                 strokeOpacity: 1.0,
                 strokeWeight: 2,
                 title: routeTitle
@@ -80,7 +76,31 @@
             polyLine.setMap(this.map);
             this.routes.push(polyLine);
         }
+    
+        this.getUsers=function(){
+            var me=this;
+            var title;
+            
+             $.get(this.apiPath + "usercars/", function(result) { //ajax
 
+                var objects = JSON.parse(result); //parsetaan vastau
+
+                for (var ajoneuvo = 0; ajoneuvo < objects.length; ajoneuvo++) {
+                    
+                    var auto = objects[ajoneuvo];
+
+                    if (auto['lat'] && auto['Lng']) {
+                        var tmpPoint = {
+                            "lat": parseFloat(auto['lat'].replace(",", ".")),
+                            "lng": parseFloat(auto['Lng'].replace(",", ".")),
+                        };
+                        title=auto['ID'];
+                        me.setMarker(tmpPoint,title+"usercars");
+                    }
+                };
+
+            });
+        }
 
         this.getRoutes = function() {
             var me = this;
@@ -170,6 +190,24 @@
             });
 
         }
+        
+        this.addMe=function(pos){
+            var message=null;
+            
+            if (localStorage['ID'] && localStorage['password'] ){
+               
+            } else {
+                localStorage['ID']=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+                localStorage['password']=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+            }
+            
+             message={ID: localStorage['ID'],
+                        password: localStorage['password'],
+                        Lat: pos.coords.latitude,
+                        Lng: pos.coords.longitude}
+                        
+            $.post(this.apiPath+'usercars/', message);
+        }
 
 
     }
@@ -186,16 +224,21 @@
 $(document).ready(function() { //tehdään alustus täällä
     'use strict';
 
-    var map = new App.Map();
-
+    var map = new App.Map(); //luodaan mappi, peruspävitykset ja asetetaan paivitys
     map.initMap();
     map.getRoutes();
     map.getStops();
     
     window.setInterval(function (){
-        map.getVehicles();
+        map.update();
     },3000);
     
-    
+    $("#LOCATE").click(function(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(pos){
+                map.addMe(pos);
+            });
+        }
+    })
 
 })
