@@ -1,71 +1,183 @@
+'use strict';
 (function mapModule(window) {
-    'use strict';
+
 
     function Map() { //mapin konstruktori
         this.map;
         this.vehicles;
         this.markers = [];
-        this.routes=[];
-        this.apiPath="https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/";
-    }
+        this.routes = [];
+        this.routeData = [];
+        this.apiPath = "https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/";
+        this.followID=null;
 
-     Map.prototype.initMap = function() { //mapin alustusmetodi
-        this.map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: 60.1699,
-                lng: 24.9384
-            },
-            zoom: 15
-        });
-    }
+        this.initMap = function() { //mapin alustusmetodi
 
-    //Lisää merkin kartalle
-    Map.prototype.setMarker = function setMarker(pos, markerTitle) {
-        var marker = new google.maps.Marker({
-            position: pos,
-            title: markerTitle,
-        });
-        this.markers.push(marker); //ja työntää sen taulukkoon
-        marker.setMap(this.map);
-    }
-
-    //luo polylinen kartalle!
-    Map.prototype.setPolyLine = function(route,routeTitle) {
-      var polyLine = new google.maps.Polyline({
-          path: route,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2,
-          title: routeTitle
-          
-      });
-
-      polyLine.setMap(this.map);
-      this.routes.push(polyLine);
-  }
-
-    Map.prototype.loadRoutes=function(){ //lataa reitit
-        $.get(this.apiPath +"routes/",function(result){
-            var objects=JSON.parse(result); //parsetaan vastaus
-            
-            for (var linja=0; linja<objects.length;linja++){
-                var tmpRoute=[];
+            this.map = new google.maps.Map(document.getElementById('map'), { //uusi kartta
+                center: { //helsinki keskipusteeksi
+                    lat: 60.1699,
+                    lng: 24.9384
+                },
+                zoom: 15
                 
-                for (var reittipiste=0; reittipiste<objects[linja]["Points"].length;reittipiste++){
-                    var tmpPoint={
-                        "lat":objects[linja]['Points'][reittipiste]['Lat'],
-                        "lng":objects[linja]['Points'][reittipiste]['lng'],
-                    };
-                    tmpRoute.push(tmpPoint);
+                
+            });
+            /*
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            var icons ={
+                Tram: {
+                    name:'Tram',
+                    icon: iconBase + '/image/Tran_icon.png'
+                },
+                stop: {
+                    name:'stops',
+                    icon: iconBase + ' /image/bus_stop2.png'
                 }
-                this.setPolyLine(tmpRoute,"Jee");
             }
-        })
+            */
+        }
+
+        this.setMarker = function(pos, markerTitle) { //luodaan uusi merkki
+             var mIcon;
+            
+            for (var indeksi=0;indeksi<this.markers.length;indeksi++){ //Tarkistetaan ettei ole olemassa samannimistä
+                if (markerTitle==this.markers[indeksi]['title']){
+                    this.markers[indeksi].setPosition(pos); //jos on niin päivitetään sijaintia
+                    return false;
+                }
+            }
+            
+            if (markerTitle.search("STOP")>=0){
+                mIcon={ path: google.maps.SymbolPath.BACKWARD_OPEN_ARROW,
+                        scale: 2}
+            } else {
+                mIcon="";
+            }
+            
+            var marker = new google.maps.Marker({ //luodaan markeri
+                position: pos,
+                title: markerTitle,
+                icon:mIcon
+            });
+            
+      
+            
+            this.markers.push(marker); //ja työntää sen taulukkoon
+            marker.setMap(this.map); //asetetaan kartalle
+        }
+
+        this.setPolyLine = function(route, routeTitle) { //piirtää reitin kartalle
+            var polyLine = new google.maps.Polyline({
+                path: route,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+                title: routeTitle
+
+            });
+
+            polyLine.setMap(this.map);
+            this.routes.push(polyLine);
+        }
+
+
+        this.getRoutes = function() {
+            var me = this;
+
+            $.get(this.apiPath + "routes/", function(result) {
+
+                var objects = JSON.parse(result); //parsetaan vastaus
+
+                for (var linja = 0; linja < objects.length; linja++) {
+                    var tmpRoute = [];
+                    var title = "";
+
+                    for (var reittipiste = 0; reittipiste < objects[linja]["Points"].length; reittipiste++) {
+
+                        var tmpPoint = {
+                            "lat": parseFloat(objects[linja]['Points'][reittipiste]['Lat'].replace(",", ".")),
+                            "lng": parseFloat(objects[linja]['Points'][reittipiste]['Lng'].replace(",", ".")),
+                        };
+                        title = objects[linja]['ID'] + "," + objects[linja]['Dir'] + ":Route"
+                        tmpRoute.push(tmpPoint);
+                    }
+                    me.setPolyLine(tmpRoute, title);
+
+                };
+
+            });
+
+        }
+
+        this.getStops = function() {
+            var me = this;
+
+            $.get(this.apiPath + "stops/", function(result) {
+
+                var objects = JSON.parse(result); //parsetaan vastau
+
+
+                for (var linja = 0; linja < objects.length; linja++) {
+                    
+                    //käydään objektit läpi
+                    for (var reittipiste = 0; reittipiste < objects[linja]["Stops"].length; reittipiste++) {
+
+                        var osoitettava = objects[linja]['Stops'][reittipiste];
+                        //selkeytetään koodia
+                        
+                        //tarkistaa datan eheyttä
+                        if (osoitettava['Lat'] && osoitettava['Lng']) {
+                            var tmpPoint = {
+                                "lat": parseFloat(osoitettava['Lat'].replace(",", ".")),
+                                "lng": parseFloat(osoitettava['Lng'].replace(",", ".")),
+                            };
+                        }
+                        
+                        //asettaa merkin kartalle
+                        me.setMarker(tmpPoint, osoitettava['StopId']+"STOP");
+                    }
+
+                };
+
+            });
+
+        }
+
+
+        this.getVehicles = function() {
+            var me = this;
+            var title="";
+
+            $.get(this.apiPath + "vehicles/", function(result) { //ajax
+
+                var objects = JSON.parse(result); //parsetaan vastau
+
+                for (var ajoneuvo = 0; ajoneuvo < objects.length; ajoneuvo++) {
+                    
+                    var auto = objects[ajoneuvo];
+
+                    if (auto['lat'] && auto['lng']) {
+                        var tmpPoint = {
+                            "lat": parseFloat(auto['lat'].replace(",", ".")),
+                            "lng": parseFloat(auto['lng'].replace(",", ".")),
+                        };
+                        title=auto['ID'];
+                        me.setMarker(tmpPoint,title);
+                    }
+                };
+
+            });
+
+        }
+
+
     }
+
+
 
     window.App = window.app || {};
-    window.App.Map=Map; //sijoitetaan luokkan App namespaceen 
+    window.App.Map = Map; //sijoitetaan luokkan App namespaceen 
 
 
 }(window))
@@ -73,9 +185,17 @@
 
 $(document).ready(function() { //tehdään alustus täällä
     'use strict';
-     
-     var map=new App.Map();
-     map.initMap();
-     map.loadRoutes();
+
+    var map = new App.Map();
+
+    map.initMap();
+    map.getRoutes();
+    map.getStops();
+    
+    window.setInterval(function (){
+        map.getVehicles();
+    },3000);
+    
+    
 
 })
