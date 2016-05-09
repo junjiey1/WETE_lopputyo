@@ -1,17 +1,84 @@
    <?php
+   /**
+    * Php script, joka pitää ajastaa käynnistymään puolen tunnin välein!!
+    * Tämä scripti päivittää ajoneuvojen sijainnit tietokantaa reaaliajassa ja käynnistyksen
+    * yhteydessä lataa reittien tiedot ja pysäkit
+    * */
    
-    //Tämä on php scripti joka ajastetaan suoriutumaan joka 2. sekuntti.
-    //päivittää tietokantaan jokaisen liikenteessä olevan ajoneuvon tiedot! 
-    //crontabilla ajastus
+  /**
+  * Receiver-luokka joka mahdollistaa tiedon hakemisen reittiopas-apista, ja tiedon siirtämisen json muodossa mongodb-tietokantaan
+  *
+  * Luokkan käyttöä varten sinulla tulee olla asennettuna mongodb ja php connector.
+  * Luokan tarkoituksena on siirtää reittiopas-apin tiedot json muodossa omaan tietokantaansa.
+  * Luokan käyttäminen luo Data nimisen tietokannan johon se sijoittaa seuraavat kokoelmat:
+  * -vehicles
+  *     Sisältää hsl-alueen raitiovaunut ja seuraavat tiedot jokaisesta ajoneuvosta(arvot annettu esimerkiksi):
+  *         ID: Metro33 //Ajoneuvon yksilöllinen ID
+  *         Route: 1001A //reitin tunnus
+  *         lng: 24 //koordinaatti
+  *         lat: 60 //koordinaatti
+  *         Angle:220 //Ajoneuvon kulma
+  *         Direction: (1 tai 2) //kumpaa päätepistettä kohti ajoneuvo kulkee
+  *         prevStop: 138172 //edellisen pysäkin yksilöllinen ID
+  *         currentStop: 128371 //nykyisen pysäkin ID
+  *         departure: 2 //paljonko aikaa seuraavalle pysäkille(min)
+  *         timestamp: 193781371783 //kertoo milloin tieto on haettu reittiopas apista
+  * -stops
+  *     {
+  *      "ID": "1003%204", //Reitin id
+  *      "Dir": 2, //suunta
+  *      "Stops": [ //taulukko pysäkeistä
+  *          {
+  *              "StopId": " 1171444", //yksilöllinen id
+  *              "Lat": "60.1925517810368", //koordinaatit
+  *              "Lng": "24.9307673446964"
+  *          }
+  *      ]
+  *  }
+  * -routes
+  * {
+  *      "ID": "1010", //linjan tunnus
+  *      "Dir": 1, //suunta
+  *      "Points": [ //linjan jokaisen reittipisteen koordinaattiparit taulukkona
+  *          { //esimerkkipiste
+  *              "Lat": "60,1610173901228",
+  *              "Lng": "24,9474712157529"
+  *          }
+  *      ]
+  *}
+  * -usercars
+  * {
+  *      "ID": "raobo", //yksilöllinen ID
+  *      "Lng": "-335.0701332092285", //koordinaatit
+  *      "lat": "60.163205243174495",
+  *      "TimeStamp": 1462513927 //aikaleima
+  *  },
+  *
+  *
+  * 
+  */
     class Receiver{
+        
     private $data;
     private $fields=array();
     private $dataStruct;
     
+    /**
+     * Muuttuja, joka annetaan MongoClientiksi
+     */
     private $connection;
+    /**
+     * Muuttuja, joka osoittaa käytettyyn tietokantaan
+     */
     private $db;
+    /**
+     * Muuttuja, joka osoittaa käytettyyn kokoelmaan
+     */
     private $collection;
-    
+        
+        /**
+         * Luokan parametriton konstruktori, joka luo tietokantayhteyden ja tyhjentää olemassaolevan tietokannan.
+         */
         public function __construct(){
             
         //variables for datagain
@@ -25,13 +92,23 @@
 
             // select a database
             $this->db = $this->connection->Data;
-
+            $this->db->dropDatabase();
         }
         
+        /**
+         * 
+         * Luokan destruktori, joka sulkee tietokantayhteyden 
+         */
         public function __destruct(){
             $this->connection->close();
         }
         
+        /**
+         * Metodi, joka hakee reittiopas-apista ratikoiden ja metrojen reaaliaikaiset sijainnit
+         * Sijoittaa tiedot Data->vehicles kokoelmaan.
+         * Palauttaa false ,jos toiminto epäonnnistuu
+         * $returns boolean
+         */
         public function getData(){ //Hakee ajoneuvojen sijainnin
             
             $this->db = $this->connection->Data;
@@ -81,7 +158,15 @@
             
         }
         
-        
+        /**
+         * Hakee reitin reittiopas apista ja sijoittaa ne tietokantaan.
+         * Data->route
+         * Palauttaa false jos tiedonhaku epäonnistuu.
+         * 
+         * @param string $line Linjan ID
+         * @param string $dir Linjan suunta (1 tai 2)
+         * @returns boolean
+         */
         public function getRoute($line="",$dir=1){
             
             $line=str_replace(" ","%20",$line);
@@ -118,6 +203,14 @@
             return true;
         }
         
+        /**
+         * Hakee reittiopas-apista pysäkin tiedot ja antaa ne tietokantaa
+         * data->stops
+         * 
+         *  @param string $line Linjan ID
+         *  @param string $dir Linjan suunta (1 tai 2)
+         *  @returns boolean
+         * */
         public function getStop($line="",$dir=1){
             $line=str_replace(" ","%20",$line);
             $this->db = $this->connection->Data;
@@ -153,6 +246,12 @@
             return true;
         }
         
+        /**
+         * Metodi, joka hakee mongodb tietokannasta ajoneuvojen linjatiedot.
+         * Metodi hakee jokaisen linjan pysäkit ja routewgs polylinjan
+         * Metodi sijoittaa saadut tiedot routes ja stops kokoelmiin
+         * */
+        
         public function getRoutes(){
             $this->collection = $this->db->vehicles; //osoittaa vehicles kokoelmaan
             $ajoneuvoarray=array();
@@ -177,6 +276,11 @@
         }
     }
     
+    /**
+     * 
+     * Tämä funktio luo uuden Receiver olion sekä hakee pysäkit ja reitit kerran.
+     * Tämän jälkeen puolen tunnin ajan scripti päivittää ajoneuvojen sijaintia reaaliajassa
+    */
     function main (){
         $maxTime=30*60;
         $vastaanotin=new Receiver();
@@ -184,8 +288,8 @@
         
         while ($maxTime>=0){
             $vastaanotin->getData();
-            $maxTime-=5;
-            sleep(5);
+            $maxTime-=$timeStep;
+            sleep($timeStep);
         }
         
         $vastaanotin->getRoutes();

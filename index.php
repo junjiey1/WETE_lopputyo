@@ -1,22 +1,42 @@
 <?php
 
-# URI parser helper functions
-# ---------------------------
-
-//todo!!!!
-//tee apiin ominaisus jolla voi hakea avain-arvoparilal itse vehicles?dir=50;
-
+/**
+ * Tiedosto, joka määrittelee API-luokan ja kutsuu luokan konstruktoria
+ */
+ 
+ /**
+  * RestApi on luokka, joka ylläpitaa kahta apia:
+  *     Rest-api
+  *     Hakuapia
+  */
 class RestApi
 {
-    
+    /**
+     * Muuttuja yhteydelle
+     */
     private $connection = null;
+    /**
+     * Muuttuja, joka osoittaa tietokantaan
+     */
     private $db = null;
+    /**
+     * Ḿuuttuja, joka osoittaa kokoelmaan
+     */
     private $collection = null;
+    /**
+     * Taulukko, joka sisältää tietokannassa olevien kokoelmien nimet!
+     */
     private $collections=null;
     
     /////////////////////////////////////////////////////////////////////////////////////////////
     //apumetodit url-osoitteen käsittelyyn
     
+    /**
+     * Metodi, joka hakee / merkillä erotetut resurssit taulukkoon url-osoitteesta
+     * esim http:url.fi/api/vehicles/
+     * Palauttaa taulukon ["api","vehicles"]
+     * @returns array numeerisesti indeksoidun taulukon url-osista
+     */
     private function getResource()
     {
         # returns numerically indexed array of URI parts
@@ -29,7 +49,10 @@ class RestApi
         array_shift($resource);
         return $resource;
     }
-    
+    /**
+     * metodi, joka palauttaa assisiatiivisen taulukon joka sisältää url-osoitteen parametrit
+     * @returns assioatiivisen taulukon url-osoitteen parametreistä
+     */
     private function getParameters()
     {
         # returns an associative array containing the parameters
@@ -49,6 +72,9 @@ class RestApi
         return $param_array;
     }
     
+    /**
+     * @returns string palauttaa käytetyn http-metodin
+     */
     private function getMethod()
     {
         # returns a string containing the HTTP method
@@ -56,8 +82,10 @@ class RestApi
         return $method;
     }
     
-
-    
+    /**
+     * Poistaa parametrina annetusta muuttujasta kaikki erikoismerkit paitsi pisteen
+     * @returns $param 
+     */
     private function check (&$param){
         $param=preg_replace('/[^A-Za-z0-9\.]/', '', $param);
         
@@ -65,6 +93,12 @@ class RestApi
     
     /////////////////////////////////////////////////////////////////////////////////////////////
     
+    /**
+     * Metodi, joka hakee Tietokannasta annetulla assosiatiivisella taulukolla dokumentteja ja tulostaa ne echolla.
+     * Palauttaa myös kyselyn tulosta kuvaavan http koodin.
+     * @param parameters assosiatiivinen taulukko jolla haetaan tietoa mongodb-tietokannasta
+     * @param $collection string Kokoelman nimi, josta tietoa haetaan
+     */
     // Rest-apin toiminnalisuus hakujen suhteen!
     private function getData($parameters = null,$collection="")
     {
@@ -104,6 +138,9 @@ class RestApi
     
     
     //Metodi jolla tietokantaan päivitetään tai syötetään dataa!
+    /**
+     * 
+     */
     private function SetData($findQuery = null,$updateValues=null,$collection=""){ 
         
         if ($collection!="" && $findQuery && $updateValues){ //Jos annettu parametrit
