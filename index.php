@@ -84,20 +84,22 @@ class RestApi
     
     /**
      * Poistaa parametrina annetusta muuttujasta kaikki erikoismerkit paitsi pisteen
-     * @returns $param 
+     * @param mixed &$param Viittaus muuttujaan
+     * @return &$param 
      */
     private function check (&$param){
         $param=preg_replace('/[^A-Za-z0-9\.]/', '', $param);
         
     }
     
-    /////////////////////////////////////////////////////////////////////////////////////////////
+ 
     
     /**
      * Metodi, joka hakee Tietokannasta annetulla assosiatiivisella taulukolla dokumentteja ja tulostaa ne echolla.
      * Palauttaa myös kyselyn tulosta kuvaavan http koodin.
-     * @param parameters assosiatiivinen taulukko jolla haetaan tietoa mongodb-tietokannasta
-     * @param $collection string Kokoelman nimi, josta tietoa haetaan
+     * 
+     * @param array $parameters assosiatiivinen taulukko jolla haetaan tietoa mongodb-tietokannasta
+     * @param string $collection Kokoelman nimi, josta tietoa haetaan
      */
     // Rest-apin toiminnalisuus hakujen suhteen!
     private function getData($parameters = null,$collection="")
@@ -137,9 +139,13 @@ class RestApi
     }
     
     
-    //Metodi jolla tietokantaan päivitetään tai syötetään dataa!
+  
     /**
-     * 
+     * Metodi joka päivittää tietokannassa olevia dokumentteja. Jos ei ole olemassa parametreja täyttävää dokumenttia niin uusi luodaan.
+     *
+     * @param array $findQuery Assosiatiivinen taulukko (katso mongodv find)
+     * @param array $updateValues Arvot jotka päivitetään tai sijoitetaan tietokantaan
+     * @param string kokoelma, jonne haku ja sijoitus tehdään
      */
     private function SetData($findQuery = null,$updateValues=null,$collection=""){ 
         
@@ -150,7 +156,14 @@ class RestApi
         
     }
     
-    //Updatemetodi omien ajoneuvojen lisäämiseen!
+    /**
+     * 
+     * Metodi jota kutsutaan kun tulee post-metodi osoitteeseen /API/usercars/
+     * Odottaa, että post-metodin mukana tulevat seuraavat parametrit: ID, password, Lng, Lat
+     * Jos tietokannasta ei löydy samalla nimellä ID tä niin luo uuden ajoneuvon post parametreilla.
+     * Post metodi oikeilla tunnistetiedoilla päivittää ajoneuvon sijaintia
+     * Jos ajoneuvoa ei pävitetä puoleen tuntiin niin se poistetaan tietokannasta
+     */
     
     private function updateCars(){
         
@@ -189,9 +202,16 @@ class RestApi
            
         }
     }
-    
-   //////////////////////////////////////////////////////////////////////////////////////////////////
-    //Konstruktori    
+
+
+    /**
+     * Luokan konstruktori
+     * 
+     * Tekee seuraavat asiat:
+     * luo tietokantayhteyden,
+     * Hakee tietokannasta kokoelmien nimet,
+     * tarkistaa kaikki saadut parametrit ja tulostaa niiden perusteella käyttäjälle tietoja tai päivittää lomakkeita tietokannasta
+     */
     public function __construct()
     {
         //luodaan tietokantayhteys
@@ -257,8 +277,11 @@ class RestApi
         
     }
     
-    ///////////////////////////////////////////////////////////////////////////////
-    //destruktori
+    /**
+    * Destruktori
+    * 
+    * Sulkee luokan tietokantayhteyden
+    */
     public function __destruct()
     {
         $this->connection->close();
@@ -266,7 +289,14 @@ class RestApi
     
 }
 
-//Tynkä joka luo luokan!
-$restApi = new RestApi();
+/**
+ * Funktio, joka luo RestApi-luokan
+ */
+function main(){
+    $restApi = new RestApi();
+}
+
+main();
+
 
 ?>

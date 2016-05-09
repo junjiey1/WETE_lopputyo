@@ -49,7 +49,14 @@
              var mIcon;
              var me=this;
              var img = { 
-                 url:'http://users.metropolia.fi/~junjiey/stop_3.png' ,
+                 url:'http://users.metropolia.fi/~junjiey/stop_4.png' ,
+                 size: new google.maps.Size(40, 55),
+                 origin: new google.maps.Point(0, 0),
+                 anchor: new google.maps.Point(0, 50)
+
+             };
+              var img2 = { 
+                 url:'http://users.metropolia.fi/~junjiey/tram_1.png' ,
                  size: new google.maps.Size(40, 55),
                  origin: new google.maps.Point(0, 0),
                  anchor: new google.maps.Point(0, 50)
@@ -71,7 +78,7 @@
                         scale: 6,
                     strokeColor: '#00FF00'}
             } else {
-                mIcon="";
+                mIcon=img2;
             }
             
             var marker = new google.maps.Marker({ //luodaan markeri

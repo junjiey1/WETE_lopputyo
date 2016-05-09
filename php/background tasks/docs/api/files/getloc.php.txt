@@ -7,22 +7,28 @@
    
   /**
   * Receiver-luokka joka mahdollistaa tiedon hakemisen reittiopas-apista, ja tiedon siirtämisen json muodossa mongodb-tietokantaan
-  *
+  * 
   * Luokkan käyttöä varten sinulla tulee olla asennettuna mongodb ja php connector.
   * Luokan tarkoituksena on siirtää reittiopas-apin tiedot json muodossa omaan tietokantaansa.
   * Luokan käyttäminen luo Data nimisen tietokannan johon se sijoittaa seuraavat kokoelmat:
-  * -vehicles
-  *     Sisältää hsl-alueen raitiovaunut ja seuraavat tiedot jokaisesta ajoneuvosta(arvot annettu esimerkiksi):
-  *         ID: Metro33 //Ajoneuvon yksilöllinen ID
-  *         Route: 1001A //reitin tunnus
-  *         lng: 24 //koordinaatti
-  *         lat: 60 //koordinaatti
-  *         Angle:220 //Ajoneuvon kulma
-  *         Direction: (1 tai 2) //kumpaa päätepistettä kohti ajoneuvo kulkee
-  *         prevStop: 138172 //edellisen pysäkin yksilöllinen ID
-  *         currentStop: 128371 //nykyisen pysäkin ID
-  *         departure: 2 //paljonko aikaa seuraavalle pysäkille(min)
-  *         timestamp: 193781371783 //kertoo milloin tieto on haettu reittiopas apista
+  * <code>
+  * alla esimerkit ja kuvaus json datasta
+  * <pre>
+  * -vehicles 
+  * [ //taulukko ajoneuvoista
+  *     {
+  *    "ID":"RHKL00212", //Yksilöllinen ID
+  *    "Route":"1007A", //reitin ID
+  *    "lng":"24.944382", //sijainti
+  *    "lat":"60.169052", //sijainti
+  *    "angle":"279", //kulma
+  *    "direction":"2", //suunta (1 tai 2)
+  *    "prevStop":"1010422", //edellisen pysäkin ID
+  *    "currentStop":"1010419", //seuraava pysäkin ID
+  *    "departure":"2244", //aika jolloin pysähtyy seuraavalle
+  *    "timestamp":"1462565014" //unix timestamp hetkestä jolloin tieto tallennettiin tietokantaan
+  *     } 
+  * ]
   * -stops
   *     {
   *      "ID": "1003%204", //Reitin id
@@ -52,9 +58,8 @@
   *      "Lng": "-335.0701332092285", //koordinaatit
   *      "lat": "60.163205243174495",
   *      "TimeStamp": 1462513927 //aikaleima
-  *  },
-  *
-  *
+  *  }
+  *</code>
   * 
   */
     class Receiver{
@@ -92,7 +97,6 @@
 
             // select a database
             $this->db = $this->connection->Data;
-            $this->db->dropDatabase();
         }
         
         /**
@@ -162,7 +166,10 @@
          * Hakee reitin reittiopas apista ja sijoittaa ne tietokantaan.
          * Data->route
          * Palauttaa false jos tiedonhaku epäonnistuu.
-         * $returns boolean
+         * 
+         * @param string $line Linjan ID
+         * @param string $dir Linjan suunta (1 tai 2)
+         * @return boolean
          */
         public function getRoute($line="",$dir=1){
             
@@ -201,8 +208,14 @@
         }
         
         /**
+         * 
          * Hakee reittiopas-apista pysäkin tiedot ja antaa ne tietokantaa
          * data->stops
+         * palautttaa falsen jos tiedonhaku epäonnistuu
+         * 
+         *  @param string $line Linjan ID
+         * @param string $dir Linjan suunta (1 tai 2)
+         * @return boolean
          * */
         public function getStop($line="",$dir=1){
             $line=str_replace(" ","%20",$line);

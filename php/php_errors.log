@@ -660,3 +660,13 @@ Stack trace:
 [02-May-2016 12:09:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
 [02-May-2016 12:09:23 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:196
 [02-May-2016 12:09:23 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:182
+[09-May-2016 10:48:53 UTC] PHP Fatal error:  Call to undefined method MongoDB::dropDatabase() in /home/ubuntu/workspace/php/background tasks/getloc.php on line 96
+[09-May-2016 10:48:53 UTC] PHP Stack trace:
+[09-May-2016 10:48:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[09-May-2016 10:48:53 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:303
+[09-May-2016 10:48:53 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:289
+[09-May-2016 10:49:08 UTC] PHP Fatal error:  Call to undefined method MongoDB::dropDatabase() in /home/ubuntu/workspace/php/background tasks/getloc.php on line 96
+[09-May-2016 10:49:08 UTC] PHP Stack trace:
+[09-May-2016 10:49:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
+[09-May-2016 10:49:08 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:303
+[09-May-2016 10:49:08 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:289
