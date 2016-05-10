@@ -1,16 +1,45 @@
 'use strict';
+
+/**
+ * Moduuli, joka pitää sisällään Map luokan
+ * 
+ */
+ 
 (function mapModule(window) {
 
-
+    /**
+     * Map-luokan konstruktori
+     * @constructs
+     */
     function Map() { //mapin konstruktori
+        /**
+         * Google maps-apin antama kartta
+         */
         this.map;
+        /**
+         * Kartalla olevat ajoneuvot
+         */
         this.vehicles;
+        /**
+         * Taulukko google maps Marker olioille
+         */
         this.markers = [];
+        /**
+         * Taulukko, jonne apilta saadut reittipisteet säilötään
+         */
         this.routes = [];
-        this.routeData = [];
+        /**
+         * Rest-apin polku!
+         */
         this.apiPath = "https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/";
+        /**
+         * Seurattavan ajoneuvonID
+         */
         this.followID=null;
-
+        
+        /**
+         * Alustaa google maps kartan ja asettaa sen keskipisteeksi Helsingin keskustan
+         */
         this.initMap = function() { //mapin alustusmetodi
 
             this.map = new google.maps.Map(document.getElementById('map'), { //uusi kartta
@@ -24,79 +53,101 @@
        
         }
         
+        /**
+         *  metodi, jota kutsutaan muutaman sekunnin välein. Kutsuu getVehicles(), getUsers() ja center() metodeita
+         */
+        
         this.update=function(){ //kutsutaan tietyn väliajan välein
             this.getVehicles();
             this.getUsers();
             this.center();
         }
         
+        /**
+         * Metodi joka keskittää kartan valitun ajoneuvon kohdalle. EI TOIMI VIELÄ!
+         */
         this.center=function(){
 
-            var tmpPoint=null;
+            var tmpPoint=null; //väliaikainen muuttuja joka laitetaan osoittamaan haluttuun markeriit
             
-            if (this.followID){
-                for (var indeksi in this.markers){
-                    if (this.markers[indeksi]['title']==this.followID){
-                        tmpPoint=this.markers[indeksi];
-                        break;
+            if (this.followID){ //jos followID!=null
+                for (var indeksi in this.markers){ //Käy taulukon läpi
+                    if (this.markers[indeksi]['title']==this.followID){ //jos followId vastaa merkin IDtä
+                        tmpPoint=this.markers[indeksi]; //tmpPoint laitetaan osoittamaan merkkiin
+                        break; //poistutaan!
                     }
                 }
+                //laitetaan kartta tmpPointerin kohtaan
                 this.map.panTo({lat:tmpPoint['lat'],lng:tmpPoint['lng']});
             }
         }
-
+        /**
+         *Luo kartalle uuden merkin.
+         * @param {object} pos Olion pitää sisältää seuraavat arvot: {Lat: xxx, lng:xxx}
+         * @param {string} markerTitle Kartalle sijoitettavan merkin otsikko
+         * @returns boolean Palauttaa true jos uusi luotiin
+         */
         this.setMarker = function(pos, markerTitle) { //luodaan uusi merkki
              var mIcon;
-             var me=this;
-             var img = { 
-                 url:'http://users.metropolia.fi/~junjiey/stop_4.png' ,
+             var me=this; //luodaan muuttuja joka osoittaa luokkaan.
+             
+             //ladataan kuvakkeet
+             var img_stop = { 
+                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/stop_4.png?_c9_id=livepreview5&_c9_host=https://ide.c9.io' ,
                  size: new google.maps.Size(40, 55),
                  origin: new google.maps.Point(0, 0),
                  anchor: new google.maps.Point(0, 50)
 
              };
-              var img2 = { 
-                 url:'http://users.metropolia.fi/~junjiey/tram_1.png' ,
+              var img_tram = { 
+                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/tram_1.png?_c9_id=livepreview7&_c9_host=https://ide.c9.io' ,
                  size: new google.maps.Size(40, 55),
                  origin: new google.maps.Point(0, 0),
                  anchor: new google.maps.Point(0, 50)
 
              };
-            for (var indeksi=0;indeksi<this.markers.length;indeksi++){ //Tarkistetaan ettei ole olemassa samannimistä
+             
+             var img_human={
+                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/human_icon_1.png?_c9_id=livepreview4&_c9_host=https://ide.c9.io',
+                 size: new google.maps.Size(40, 55),
+                 origin: new google.maps.Point(0, 0),
+                 anchor: new google.maps.Point(0, 50)
+             }
+             
+             //Tarkistetaan ettei ole olemassa samannimistä
+            for (var indeksi=0;indeksi<this.markers.length;indeksi++){ 
                 if (markerTitle==this.markers[indeksi]['title']){
                     this.markers[indeksi].setPosition(pos); //jos on niin päivitetään sijaintia
-                    return false;
+                    return false; //ja palautetaan false
                 }
             }
             
+            //määritetään mikä kuvake piirretään!
             if (markerTitle.search("STOP")>=0){ //jos on bussipysäkki niin asetetaan musta nuoli kuvakkeeksi
-                mIcon=img;
-                //{ path: google.maps.SymbolPath.BACKWARD_OPEN_ARROW,
-                  //      scale: 2}
+                mIcon=img_stop;
+                
             } else if (markerTitle.search("usercars")>=0){
-                mIcon={ path: google.maps.SymbolPath.CIRCLE,
-                        scale: 6,
-                    strokeColor: '#00FF00'}
+                mIcon=img_human;
             } else {
-                mIcon=img2;
+                mIcon=img_tram;
             }
+            
             
             var marker = new google.maps.Marker({ //luodaan markeri
                 position: pos,
                 title: markerTitle,
                 icon:mIcon
             });
-      
-            if (markerTitle.search("HSL")>=0){
-                marker.addListener('click',function(){
-                    me.followID=this['title'];
-                });
-            }
             
             this.markers.push(marker); //ja työntää sen taulukkoon
             marker.setMap(this.map); //asetetaan kartalle
         }
 
+        /**
+         * Piirtää kartalle reitin polylineilla
+         * @param {object} route Google mapsin hyväksymä path objekti
+         * @param {string} routeTitle Reitin otsikko!
+         */
         this.setPolyLine = function(route, routeTitle) { //piirtää reitin kartalle
             var polyLine = new google.maps.Polyline({
                 path: route,

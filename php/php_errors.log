@@ -670,3 +670,10 @@ Stack trace:
 [09-May-2016 10:49:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/background tasks/getloc.php:0
 [09-May-2016 10:49:08 UTC] PHP   2. main() /home/ubuntu/workspace/php/background tasks/getloc.php:303
 [09-May-2016 10:49:08 UTC] PHP   3. Receiver->__construct() /home/ubuntu/workspace/php/background tasks/getloc.php:289
+[10-May-2016 07:38:28 UTC] PHP Fatal error:  Uncaught exception 'MongoConnectionException' with message 'Failed to connect to: localhost:27017: Connection refused' in /home/ubuntu/workspace/php/background tasks/getloc.php:96
+Stack trace:
+#0 /home/ubuntu/workspace/php/background tasks/getloc.php(96): MongoClient->__construct()
+#1 /home/ubuntu/workspace/php/background tasks/getloc.php(292): Receiver->__construct()
+#2 /home/ubuntu/workspace/php/background tasks/getloc.php(306): main()
+#3 {main}
+  thrown in /home/ubuntu/workspace/php/background tasks/getloc.php on line 96
