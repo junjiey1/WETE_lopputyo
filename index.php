@@ -6,8 +6,8 @@
  */
  
  /**
-  * RestApi on luokka, joka ylläpitaa kahta apia:
-  *    
+  * RestApi on luokka, joka ylläpitaa kahta apia
+  *  Tekijä:Kasperi  
   * <code>
   *  !!Rest-api!!
   * 
@@ -93,7 +93,6 @@ class RestApi
     /**
      * Metodi, joka hakee / merkillä erotetut resurssit taulukkoon url-osoitteesta
      * esim http:url.fi/api/vehicles/
-     * Palauttaa taulukon ["api","vehicles"]
      * @returns array numeerisesti indeksoidun taulukon url-osista
      */
     private function getResource()
@@ -110,7 +109,7 @@ class RestApi
     }
     /**
      * metodi, joka palauttaa assisiatiivisen taulukon joka sisältää url-osoitteen parametrit
-     * @returns assioatiivisen taulukon url-osoitteen parametreistä
+     * @returns assosiatiivisen taulukon url-osoitteen parametreistä. 
      */
     private function getParameters()
     {
@@ -144,7 +143,7 @@ class RestApi
     /**
      * Poistaa parametrina annetusta muuttujasta kaikki erikoismerkit paitsi pisteen
      * @param mixed &$param Viittaus muuttujaan
-     * @return &$param 
+     * @return &$param Ilman erikoismerkkejä
      */
     private function check (&$param){
         $param=preg_replace('/[^A-Za-z0-9\.]/', '', $param);
@@ -280,7 +279,7 @@ class RestApi
      * Tekee seuraavat asiat:
      * luo tietokantayhteyden,
      * Hakee tietokannasta kokoelmien nimet,
-     * tarkistaa kaikki saadut parametrit ja tulostaa niiden perusteella käyttäjälle tietoja tai päivittää lomakkeita tietokannasta
+     * tarkistaa kaikki saadut parametrit ja tulostaa niiden perusteella käyttäjälle tietoja tai päivittää lomakkeita tietokannasta.
      */
     public function __construct()
     {

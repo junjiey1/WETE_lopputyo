@@ -8,6 +8,7 @@
   /**
   * Receiver-luokka joka mahdollistaa tiedon hakemisen reittiopas-apista, ja tiedon siirtämisen json muodossa mongodb-tietokantaan
   * 
+  * Tekijä:Kasperi
   * Luokkan käyttöä varten sinulla tulee olla asennettuna mongodb ja php connector.
   * Luokan tarkoituksena on siirtää reittiopas-apin tiedot json muodossa omaan tietokantaansa.
   * Luokan käyttäminen luo Data nimisen tietokannan johon se sijoittaa seuraavat kokoelmat:
@@ -63,10 +64,14 @@
   * 
   */
     class Receiver{
-        
+    /**
+     * Tietokannalta vastaanotettu data
+     */
     private $data;
+    /**
+     * $data räjäytettynä ; merkeistä
+     */
     private $fields=array();
-    private $dataStruct;
     
     /**
      * Muuttuja, joka annetaan MongoClientiksi
@@ -86,8 +91,6 @@
          */
         public function __construct(){
             
-        //variables for datagain
-           $this->dataStruct=array();
            $this->fields=array();
            $this->columns=array();
            

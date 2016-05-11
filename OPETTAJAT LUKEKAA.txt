@@ -11,7 +11,10 @@ Taustascripti
     php/background tasks/getloc.php
 
 Dokumentaatio
-    
+    docs kansio
+
+APIN PHP testit
+    phpUnit
 
 SOVELLUKSEN KÄYNNISTYS
     Start_server.sh
