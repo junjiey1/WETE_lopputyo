@@ -27,6 +27,10 @@ class RestApi
      * Taulukko, joka sisältää tietokannassa olevien kokoelmien nimet!
      */
     private $collections=null;
+    /**
+     * Muuttuja joka sisältää http response koodin!
+     */
+    private $respCode=0;
     
     /////////////////////////////////////////////////////////////////////////////////////////////
     //apumetodit url-osoitteen käsittelyyn
@@ -136,6 +140,8 @@ class RestApi
         } else {
             http_response_code(404); # virhe
         }
+        
+        $this->respCode=http_response_code();
     }
     
     
@@ -201,6 +207,15 @@ class RestApi
              }
            
         }
+        
+        $this->respCode=http_response_code();
+    }
+    
+    /**
+     * Getteri http-paluuarvolle!
+     */
+    public function getHTTPCode(){
+        return $this->respCode;
     }
 
 
@@ -273,7 +288,7 @@ class RestApi
         } else {
             http_response_code(405); # Method not allowed
         } 
-        
+        $this->respCode=http_response_code();
         
     }
     

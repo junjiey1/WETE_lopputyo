@@ -164,7 +164,9 @@
         }
         
        
-    
+        /**
+         * Piirtää kartalle käyttäjän sijainti
+         */
         this.getUsers=function(){
             var me=this;
             var title;
@@ -190,6 +192,9 @@
             });
         }
 
+        /**
+         * Hae reittiä APIn kautta ja piirtä kartalle reitin polylineilla
+         */
         this.getRoutes = function() {
             var me = this;
 
@@ -217,6 +222,9 @@
             });
 
         }
+        /**
+         * Hae pysäkkien tiedot APIn kautta ja luo kantalle merkki
+         */
 
         this.getStops = function() {
             var me = this;
@@ -252,7 +260,9 @@
 
         }
 
-
+        /**
+         * Hae kulkuneuvojen tiedot APIn kautta ja luo kantalle merkki
+         */
         this.getVehicles = function() {
             var me = this;
             var title="";

@@ -1882,3 +1882,55 @@
 [27-Apr-2016 16:09:31 UTC] PHP   2. Receiver->__construct() /home/ubuntu/workspace/php/getloc.php:80
 [27-Apr-2016 16:25:44 UTC] PHP Parse error:  syntax error, unexpected 'time' (T_STRING), expecting ')' in /home/ubuntu/workspace/php/getloc.php on line 66
 [27-Apr-2016 16:26:29 UTC] PHP Parse error:  syntax error, unexpected 'time' (T_STRING) in /home/ubuntu/workspace/php/getloc.php on line 66
+[11-May-2016 06:30:56 UTC] PHP Fatal error:  Call to undefined method indexTest::assertResponseStatusCode() in /home/ubuntu/workspace/phpUnit/tests/indexTest.php on line 37
+[11-May-2016 06:30:56 UTC] PHP Stack trace:
+[11-May-2016 06:30:56 UTC] PHP   1. {main}() /usr/local/bin/phpunit:0
+[11-May-2016 06:30:56 UTC] PHP   2. PHPUnit_TextUI_Command::main() /usr/local/bin/phpunit:548
+[11-May-2016 06:30:56 UTC] PHP   3. PHPUnit_TextUI_Command->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:100
+[11-May-2016 06:30:56 UTC] PHP   4. PHPUnit_TextUI_TestRunner->doRun() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:149
+[11-May-2016 06:30:56 UTC] PHP   5. PHPUnit_Framework_TestSuite->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/TestRunner.php:440
+[11-May-2016 06:30:56 UTC] PHP   6. PHPUnit_Framework_TestCase->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestSuite.php:747
+[11-May-2016 06:30:56 UTC] PHP   7. PHPUnit_Framework_TestResult->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:724
+[11-May-2016 06:30:56 UTC] PHP   8. PHPUnit_Framework_TestCase->runBare() phar:///usr/local/bin/phpunit/phpunit/Framework/TestResult.php:612
+[11-May-2016 06:30:56 UTC] PHP   9. PHPUnit_Framework_TestCase->runTest() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:768
+[11-May-2016 06:30:56 UTC] PHP  10. ReflectionMethod->invokeArgs() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 06:30:56 UTC] PHP  11. indexTest->testUrls() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 06:30:56 UTC] PHP  12. indexTest->urlTest() /home/ubuntu/workspace/phpUnit/tests/indexTest.php:43
+[11-May-2016 06:47:47 UTC] PHP Fatal error:  Call to undefined method RestApi::getHTTPCode() in /home/ubuntu/workspace/phpUnit/tests/indexTest.php on line 40
+[11-May-2016 06:47:47 UTC] PHP Stack trace:
+[11-May-2016 06:47:47 UTC] PHP   1. {main}() /usr/local/bin/phpunit:0
+[11-May-2016 06:47:47 UTC] PHP   2. PHPUnit_TextUI_Command::main() /usr/local/bin/phpunit:548
+[11-May-2016 06:47:47 UTC] PHP   3. PHPUnit_TextUI_Command->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:100
+[11-May-2016 06:47:47 UTC] PHP   4. PHPUnit_TextUI_TestRunner->doRun() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:149
+[11-May-2016 06:47:47 UTC] PHP   5. PHPUnit_Framework_TestSuite->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/TestRunner.php:440
+[11-May-2016 06:47:47 UTC] PHP   6. PHPUnit_Framework_TestCase->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestSuite.php:747
+[11-May-2016 06:47:47 UTC] PHP   7. PHPUnit_Framework_TestResult->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:724
+[11-May-2016 06:47:47 UTC] PHP   8. PHPUnit_Framework_TestCase->runBare() phar:///usr/local/bin/phpunit/phpunit/Framework/TestResult.php:612
+[11-May-2016 06:47:47 UTC] PHP   9. PHPUnit_Framework_TestCase->runTest() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:768
+[11-May-2016 06:47:47 UTC] PHP  10. ReflectionMethod->invokeArgs() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 06:47:47 UTC] PHP  11. indexTest->testUrls() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 06:47:47 UTC] PHP  12. indexTest->urlTest() /home/ubuntu/workspace/phpUnit/tests/indexTest.php:51
+[11-May-2016 07:05:07 UTC] PHP Fatal error:  Class 'HttpRequest' not found in /home/ubuntu/workspace/phpUnit/tests/indexTest.php on line 30
+[11-May-2016 07:05:07 UTC] PHP Stack trace:
+[11-May-2016 07:05:07 UTC] PHP   1. {main}() /usr/local/bin/phpunit:0
+[11-May-2016 07:05:07 UTC] PHP   2. PHPUnit_TextUI_Command::main() /usr/local/bin/phpunit:548
+[11-May-2016 07:05:07 UTC] PHP   3. PHPUnit_TextUI_Command->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:100
+[11-May-2016 07:05:07 UTC] PHP   4. PHPUnit_TextUI_TestRunner->doRun() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:149
+[11-May-2016 07:05:07 UTC] PHP   5. PHPUnit_Framework_TestSuite->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/TestRunner.php:440
+[11-May-2016 07:05:07 UTC] PHP   6. PHPUnit_Framework_TestCase->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestSuite.php:747
+[11-May-2016 07:05:07 UTC] PHP   7. PHPUnit_Framework_TestResult->run() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:724
+[11-May-2016 07:05:07 UTC] PHP   8. PHPUnit_Framework_TestCase->runBare() phar:///usr/local/bin/phpunit/phpunit/Framework/TestResult.php:612
+[11-May-2016 07:05:07 UTC] PHP   9. PHPUnit_Framework_TestCase->runTest() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:768
+[11-May-2016 07:05:07 UTC] PHP  10. ReflectionMethod->invokeArgs() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 07:05:07 UTC] PHP  11. indexTest->testUrls() phar:///usr/local/bin/phpunit/phpunit/Framework/TestCase.php:909
+[11-May-2016 07:05:07 UTC] PHP  12. indexTest->urlTest() /home/ubuntu/workspace/phpUnit/tests/indexTest.php:45
+[11-May-2016 07:28:42 UTC] PHP Fatal error:  Cannot make static method PHPUnit_Framework_Assert::isJson() non static in class indexTest in /home/ubuntu/workspace/phpUnit/tests/indexTest.php on line 84
+[11-May-2016 07:28:42 UTC] PHP Stack trace:
+[11-May-2016 07:28:42 UTC] PHP   1. {main}() /usr/local/bin/phpunit:0
+[11-May-2016 07:28:42 UTC] PHP   2. PHPUnit_TextUI_Command::main() /usr/local/bin/phpunit:548
+[11-May-2016 07:28:42 UTC] PHP   3. PHPUnit_TextUI_Command->run() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:100
+[11-May-2016 07:28:42 UTC] PHP   4. PHPUnit_Runner_BaseTestRunner->getTest() phar:///usr/local/bin/phpunit/phpunit/TextUI/Command.php:123
+[11-May-2016 07:28:42 UTC] PHP   5. PHPUnit_Runner_BaseTestRunner->loadSuiteClass() phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php:67
+[11-May-2016 07:28:42 UTC] PHP   6. PHPUnit_Runner_StandardTestSuiteLoader->load() phar:///usr/local/bin/phpunit/phpunit/Runner/BaseTestRunner.php:123
+[11-May-2016 07:28:42 UTC] PHP   7. PHPUnit_Util_Fileloader::checkAndLoad() phar:///usr/local/bin/phpunit/phpunit/Runner/StandardTestSuiteLoader.php:39
+[11-May-2016 07:28:42 UTC] PHP   8. PHPUnit_Util_Fileloader::load() phar:///usr/local/bin/phpunit/phpunit/Util/Fileloader.php:38
