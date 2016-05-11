@@ -1,1 +1,0 @@
-watch -n 1800 php getloc.php

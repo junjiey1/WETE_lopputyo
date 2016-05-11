@@ -1,0 +1,18 @@
+Tämän tiedoston tarkoituksena on helpottaa projektin tarkistamista!
+
+Sovelluksen tiedostot:
+    index.html
+    js/script.js
+
+API
+    index.php
+
+Taustascripti
+    php/background tasks/getloc.php
+
+Dokumentaatio
+    
+
+SOVELLUKSEN KÄYNNISTYS
+    Start_server.sh
+    Lisäksi cloud9 takia index.php pitää runnata

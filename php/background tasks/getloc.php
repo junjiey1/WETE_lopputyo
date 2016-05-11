@@ -63,7 +63,10 @@
   * 
   */
     class Receiver{
-        
+    /**
+     * 
+     * 
+     */
     private $data;
     private $fields=array();
     private $dataStruct;
@@ -299,8 +302,6 @@
         }
         
         $vastaanotin->getRoutes();
-        
-       
     }
     
     main();

@@ -1,3 +1,5 @@
 rm database/data/mongod.lock
-./database/mongod &
-watch -n 1800 php getloc.php
+cd database/
+./mongod &
+cd ../
+sleep 10; watch -n 1800 php "php/background\ tasks/getloc.php" &

@@ -1,14 +1,20 @@
 <?php
 
-spl_autoload_register(function ($class_name) {
-    include $class_name . '.php';
-});
+/**
+ * Testi joka testaa index.php ja getloc scriptin toimintaa
+ */
+
+/**
+* IndexTest-luokka joka laajentaa PHPunit_Framework_Testcase luokkaa
+* Luokka testaa REST-apin toimintaa
+*/
+
 
 class indexTest extends PHPUnit_Framework_TestCase
 {
     private $base="https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/";
     
-    private $respCode200=array("API",
+    private $respCode200=array("API", //Apin osoitteet
                                 "API/",
                                 "API/vehicles/",
                                 "API/stops/",
@@ -16,10 +22,9 @@ class indexTest extends PHPUnit_Framework_TestCase
                                 "API/usercars",
                                 "SEARCH/vehicles/",
                                 "SEARCH/routes/",
-                                "SEARCH/stops/");
-    
-    private $respCode204=array("API/vehicles/jeejee",
-                              "API/vehicles/------++");
+                                "SEARCH/stops/",
+                                "API/st)(ops", //erikoismerkkien suodatus
+                                "API/|sto--ps");
                                 
     private $respCode405=array("TEST//////////////",
                                 "Wohoo/",
@@ -38,7 +43,7 @@ class indexTest extends PHPUnit_Framework_TestCase
     
 
     
-    private function urlTest($url,$method,$response) //apumetodi, joka tarkistaa palauttaako api oikean paluuarvon
+    private function urlTest($url,$method,$response) //apumetodi, joka tarkistaa palauttaako api oikean HTTP paluuarvon
     {
       @file_get_contents($this->base.$url);
       
@@ -50,7 +55,7 @@ class indexTest extends PHPUnit_Framework_TestCase
       
     }
     
-    private function post($url,$data){ //luo post-kyselyn!
+    private function post($url,$data,$response){ //luo post-kyselyn!
 
     //Luodaan sisältö postiin
     $options = array(
@@ -62,8 +67,7 @@ class indexTest extends PHPUnit_Framework_TestCase
         );
         
         $context  = stream_context_create($options);
-        file_get_contents($url, false, $context);
-        
+        @file_get_contents($url, false, $context);
         if ($http_response_header[0]==$response){
           return true;
       } else {
@@ -85,9 +89,8 @@ class indexTest extends PHPUnit_Framework_TestCase
         
     }
     
-    
     public function testCollectionAmount(){ //testaa että neljä kokoelmaa
-        $this->assertEquals(count($this->db->getCollectionNames()),4);
+        $this->assertEquals(count($this->db->getCollectionNames()),true);
     }
     
     public function testDataParsing(){ //testaa että kaikilla sivuilla on validia jsonia
@@ -97,8 +100,21 @@ class indexTest extends PHPUnit_Framework_TestCase
         }
     }
     
-    public function TestpostCar(){
+    public function testPostCar(){ //testaa voiko auton laittaa tietokantaa ja hyväksyykö päällekkäisyyksiä!
+        
+        //annetaan id autolle
+        $id="TESTCAR".time();
+        $params=array(ID=>$id,password=>"uihwyawydy",Lng=>24,Lat=>60);
+        $url="https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/usercars";
+        
+        //lisätään auto tietokantaa!
+        $this->assertEquals( $this->post($url,$params,"HTTP/1.1 200 OK") ,true);
+        
+        //Kokeillaan väärällä salasanalla
+        $params['password']="vaara";
+        $this->assertEquals( $this->post($url,$params,"HTTP/1.1 200 OK") ,false);
         
     }
+    
     
 }

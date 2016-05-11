@@ -1,13 +1,68 @@
 <?php
 
 /**
- * Tiedosto, joka määrittelee API-luokan ja kutsuu luokan konstruktoria
+ * Tiedosto, joka määrittelee API-luokan ja kutsuu luokan konstruktoria.
+ * @author Kasperi Närhi
  */
  
  /**
   * RestApi on luokka, joka ylläpitaa kahta apia:
-  *     Rest-api
-  *     Hakuapia
+  *    
+  * <code>
+  *  !!Rest-api!!
+  * 
+  * Rest apin osoite:
+  *     url.fi/API/
+  * 
+  *     //GET-metodi//
+  * 
+  *     //Palauttaa kaikki apissa olevat "kokoelmat"
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/
+  *     
+  *     //Esimerkki kokoelmien käytöstä
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/vehicles/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/stops/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/routes/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/usercars/
+  * 
+  *      //Yksittäiseen jäseneen pääsee käsiksi seuraavalla tavalla
+  *     //korvaa ID halutulla ajoneuvon (ajoneuvot) tai reitin (pysäkit,reitit) IDllä 
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/vehicles/ID
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/stops/ID
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/routes/ID
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/usercars/ID
+  *     
+  *     //POST//
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/API/usercars/
+  *     Luo uuden auton kun parametreina on:
+  *     ID:
+  *     password:
+  *     Lng:
+  *     Lat:
+  *     
+  *     Lähettämällä oikean ID ja salasanan, pystyy päivittämään ajoneuvon sijaintia.
+  * 
+  * </code>
+  * 
+  * <code>
+  *     Hakuapi
+  *     
+  *     //sijainti:
+  *     url.fi/SEARCH/
+  *     
+  *     Tietojen listaaminen:
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/SEARCH/vehicles/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/SEARCH/stops/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/SEARCH/routes/
+  *     https://bussitutkakoulutyo17813173171261263-kapuofthe.c9users.io/SEARCH/usercars/
+  * 
+  *     //hakeminen jsonista onnistuu seuraavasti
+  *     /SEARCH/stops?avain=arvo&avain2=arvo2;
+  * 
+  *     esim
+  *     taSEARCH/vehicles?angle=1
+  * 
+  * </code>
   */
 class RestApi
 {

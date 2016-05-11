@@ -4,7 +4,7 @@ describe('Javascript testi: ', function(){
     
      
     it("Map testi", function(){
-        expect(initMap).toEqual();
+        expect(this.initMap).toEqual();
     });
     
 });
