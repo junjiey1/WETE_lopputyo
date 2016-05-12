@@ -11,10 +11,14 @@ Taustascripti
     php/background tasks/getloc.php
 
 Dokumentaatio
-    docs kansio
+    docs kansio (php DOCUMENTOR)
+    out kansio  (jsDOC)
 
 APIN PHP testit
     phpUnit
+
+client javascript testit
+   Spec/
 
 SOVELLUKSEN KÄYNNISTYS
     Start_server.sh

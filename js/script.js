@@ -9,7 +9,7 @@
 
     /**
      * Map-luokan konstruktori
-     * @constructs
+     * 
      */
     function Map() { //mapin konstruktori
         /**
