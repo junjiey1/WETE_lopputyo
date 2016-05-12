@@ -4,7 +4,7 @@
  * Moduuli, joka pitää sisällään Map luokan
  * 
  */
- 
+
 (function mapModule(window) {
 
     /**
@@ -35,8 +35,8 @@
         /**
          * Seurattavan ajoneuvonID
          */
-        this.followID=null;
-        
+        this.followID = null;
+
         /**
          * Alustaa google maps kartan ja asettaa sen keskipisteeksi Helsingin keskustan
          */
@@ -50,95 +50,98 @@
                 zoom: 15
 
             });
-       
+
         }
-        
+
         /**
          *  metodi, jota kutsutaan muutaman sekunnin välein. Kutsuu getVehicles(), getUsers() ja center() metodeita
          */
-        
-        this.update=function(){ //kutsutaan tietyn väliajan välein
+
+        this.update = function() { //kutsutaan tietyn väliajan välein
             this.getVehicles();
             this.getUsers();
             this.center();
         }
-        
+
         /**
          * Metodi joka keskittää kartan valitun ajoneuvon kohdalle. EI TOIMI VIELÄ!
          */
-        this.center=function(){
+        this.center = function() {
 
-            var tmpPoint=null; //väliaikainen muuttuja joka laitetaan osoittamaan haluttuun markeriit
-            
-            if (this.followID){ //jos followID!=null
-                for (var indeksi in this.markers){ //Käy taulukon läpi
-                    if (this.markers[indeksi]['title']==this.followID){ //jos followId vastaa merkin IDtä
-                        tmpPoint=this.markers[indeksi]; //tmpPoint laitetaan osoittamaan merkkiin
-                        break; //poistutaan!
+                var tmpPoint = null; //väliaikainen muuttuja joka laitetaan osoittamaan haluttuun markeriit
+
+                if (this.followID) { //jos followID!=null
+                    for (var indeksi in this.markers) { //Käy taulukon läpi
+                        if (this.markers[indeksi]['title'] == this.followID) { //jos followId vastaa merkin IDtä
+                            tmpPoint = this.markers[indeksi]; //tmpPoint laitetaan osoittamaan merkkiin
+                            break; //poistutaan!
+                        }
                     }
+                    //laitetaan kartta tmpPointerin kohtaan
+                    this.map.panTo({
+                        lat: tmpPoint['lat'],
+                        lng: tmpPoint['lng']
+                    });
                 }
-                //laitetaan kartta tmpPointerin kohtaan
-                this.map.panTo({lat:tmpPoint['lat'],lng:tmpPoint['lng']});
             }
-        }
-        /**
-         *Luo kartalle uuden merkin.
-         * @param {object} pos Olion pitää sisältää seuraavat arvot: {Lat: xxx, lng:xxx}
-         * @param {string} markerTitle Kartalle sijoitettavan merkin otsikko
-         * @returns boolean Palauttaa true jos uusi luotiin
-         */
+            /**
+             *Luo kartalle uuden merkin.
+             * @param {object} pos Olion pitää sisältää seuraavat arvot: {Lat: xxx, lng:xxx}
+             * @param {string} markerTitle Kartalle sijoitettavan merkin otsikko
+             * @returns boolean Palauttaa true jos uusi luotiin
+             */
         this.setMarker = function(pos, markerTitle) { //luodaan uusi merkki
-             var mIcon;
-             var me=this; //luodaan muuttuja joka osoittaa luokkaan.
-             
-             //ladataan kuvakkeet
-             var img_stop = { 
-                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/stop_4.png?_c9_id=livepreview5&_c9_host=https://ide.c9.io' ,
-                 size: new google.maps.Size(40, 55),
-                 origin: new google.maps.Point(0, 0),
-                 anchor: new google.maps.Point(0, 50)
+            var mIcon;
+            var me = this; //luodaan muuttuja joka osoittaa luokkaan.
 
-             };
-              var img_tram = { 
-                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/tram_1.png?_c9_id=livepreview7&_c9_host=https://ide.c9.io' ,
-                 size: new google.maps.Size(40, 55),
-                 origin: new google.maps.Point(0, 0),
-                 anchor: new google.maps.Point(0, 50)
+            //ladataan kuvakkeet
+            var img_stop = {
+                url: 'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/stop_4.png?_c9_id=livepreview5&_c9_host=https://ide.c9.io',
+                size: new google.maps.Size(40, 55),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 50)
 
-             };
-             
-             var img_human={
-                 url:'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/human_icon_1.png?_c9_id=livepreview4&_c9_host=https://ide.c9.io',
-                 size: new google.maps.Size(40, 55),
-                 origin: new google.maps.Point(0, 0),
-                 anchor: new google.maps.Point(0, 50)
-             }
-             
-             //Tarkistetaan ettei ole olemassa samannimistä
-            for (var indeksi=0;indeksi<this.markers.length;indeksi++){ 
-                if (markerTitle==this.markers[indeksi]['title']){
+            };
+            var img_tram = {
+                url: 'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/tram_1.png?_c9_id=livepreview7&_c9_host=https://ide.c9.io',
+                size: new google.maps.Size(40, 55),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 50)
+
+            };
+
+            var img_human = {
+                url: 'https://preview.c9users.io/kapuofthe/bussitutkakoulutyo17813173171261263/image/human_icon_1.png?_c9_id=livepreview4&_c9_host=https://ide.c9.io',
+                size: new google.maps.Size(40, 55),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 50)
+            }
+
+            //Tarkistetaan ettei ole olemassa samannimistä
+            for (var indeksi = 0; indeksi < this.markers.length; indeksi++) {
+                if (markerTitle == this.markers[indeksi]['title']) {
                     this.markers[indeksi].setPosition(pos); //jos on niin päivitetään sijaintia
                     return false; //ja palautetaan false
                 }
             }
-            
+
             //määritetään mikä kuvake piirretään!
-            if (markerTitle.search("STOP")>=0){ //jos on bussipysäkki niin asetetaan musta nuoli kuvakkeeksi
-                mIcon=img_stop;
-                
-            } else if (markerTitle.search("usercars")>=0){
-                mIcon=img_human;
+            if (markerTitle.search("STOP") >= 0) { //jos on bussipysäkki niin asetetaan musta nuoli kuvakkeeksi
+                mIcon = img_stop;
+
+            } else if (markerTitle.search("usercars") >= 0) {
+                mIcon = img_human;
             } else {
-                mIcon=img_tram;
+                mIcon = img_tram;
             }
-            
-            
+
+
             var marker = new google.maps.Marker({ //luodaan markeri
                 position: pos,
                 title: markerTitle,
-                icon:mIcon
+                icon: mIcon
             });
-            
+
             this.markers.push(marker); //ja työntää sen taulukkoon
             marker.setMap(this.map); //asetetaan kartalle
         }
@@ -162,21 +165,21 @@
             polyLine.setMap(this.map);
             this.routes.push(polyLine);
         }
-        
-       
+
+
         /**
          * Piirtää kartalle käyttäjän sijainti
          */
-        this.getUsers=function(){
-            var me=this;
+        this.getUsers = function() {
+            var me = this;
             var title;
-            
-             $.get(this.apiPath + "usercars/", function(result) { //ajax
+
+            $.get(this.apiPath + "usercars/", function(result) { //ajax
 
                 var objects = JSON.parse(result); //parsetaan vastau
-               
+
                 for (var ajoneuvo = 0; ajoneuvo < objects.length; ajoneuvo++) {
-                    
+
                     var auto = objects[ajoneuvo];
 
                     if (auto['lat'] && auto['Lng']) {
@@ -184,8 +187,8 @@
                             "lat": parseFloat(auto['lat'].replace(",", ".")),
                             "lng": parseFloat(auto['Lng'].replace(",", ".")),
                         };
-                        title=auto['ID'];
-                        me.setMarker(tmpPoint,title+"usercars");
+                        title = auto['ID'];
+                        me.setMarker(tmpPoint, title + "usercars");
                     }
                 };
 
@@ -196,35 +199,35 @@
          * Hae reittiä APIn kautta ja piirtä kartalle reitin polylineilla
          */
         this.getRoutes = function() {
-            var me = this;
+                var me = this;
 
-            $.get(this.apiPath + "routes/", function(result) {
+                $.get(this.apiPath + "routes/", function(result) {
 
-                var objects = JSON.parse(result); //parsetaan vastaus
+                    var objects = JSON.parse(result); //parsetaan vastaus
 
-                for (var linja = 0; linja < objects.length; linja++) {
-                    var tmpRoute = [];
-                    var title = "";
+                    for (var linja = 0; linja < objects.length; linja++) {
+                        var tmpRoute = [];
+                        var title = "";
 
-                    for (var reittipiste = 0; reittipiste < objects[linja]["Points"].length; reittipiste++) {
+                        for (var reittipiste = 0; reittipiste < objects[linja]["Points"].length; reittipiste++) {
 
-                        var tmpPoint = {
-                            "lat": parseFloat(objects[linja]['Points'][reittipiste]['Lat'].replace(",", ".")),
-                            "lng": parseFloat(objects[linja]['Points'][reittipiste]['Lng'].replace(",", ".")),
-                        };
-                        title = objects[linja]['ID'] + "," + objects[linja]['Dir'] + ":Route"
-                        tmpRoute.push(tmpPoint);
-                    }
-                    me.setPolyLine(tmpRoute, title);
+                            var tmpPoint = {
+                                "lat": parseFloat(objects[linja]['Points'][reittipiste]['Lat'].replace(",", ".")),
+                                "lng": parseFloat(objects[linja]['Points'][reittipiste]['Lng'].replace(",", ".")),
+                            };
+                            title = objects[linja]['ID'] + "," + objects[linja]['Dir'] + ":Route"
+                            tmpRoute.push(tmpPoint);
+                        }
+                        me.setPolyLine(tmpRoute, title);
 
-                };
+                    };
 
-            });
+                });
 
-        }
-        /**
-         * Hae pysäkkien tiedot APIn kautta ja luo kantalle merkki
-         */
+            }
+            /**
+             * Hae pysäkkien tiedot APIn kautta ja luo kantalle merkki
+             */
 
         this.getStops = function() {
             var me = this;
@@ -235,13 +238,13 @@
 
 
                 for (var linja = 0; linja < objects.length; linja++) {
-                    
+
                     //käydään objektit läpi
                     for (var reittipiste = 0; reittipiste < objects[linja]["Stops"].length; reittipiste++) {
 
                         var osoitettava = objects[linja]['Stops'][reittipiste];
                         //selkeytetään koodia
-                        
+
                         //tarkistaa datan eheyttä
                         if (osoitettava['Lat'] && osoitettava['Lng']) {
                             var tmpPoint = {
@@ -249,9 +252,9 @@
                                 "lng": parseFloat(osoitettava['Lng'].replace(",", ".")),
                             };
                         }
-                        
+
                         //asettaa merkin kartalle
-                        me.setMarker(tmpPoint, osoitettava['StopId']+"STOP");
+                        me.setMarker(tmpPoint, osoitettava['StopId'] + "STOP");
                     }
 
                 };
@@ -265,14 +268,14 @@
          */
         this.getVehicles = function() {
             var me = this;
-            var title="";
+            var title = "";
 
             $.get(this.apiPath + "vehicles/", function(result) { //ajax
 
                 var objects = JSON.parse(result); //parsetaan vastau
 
                 for (var ajoneuvo = 0; ajoneuvo < objects.length; ajoneuvo++) {
-                    
+
                     var auto = objects[ajoneuvo];
 
                     if (auto['lat'] && auto['lng']) {
@@ -280,36 +283,38 @@
                             "lat": parseFloat(auto['lat'].replace(",", ".")),
                             "lng": parseFloat(auto['lng'].replace(",", ".")),
                         };
-                        title=auto['ID'];
-                        me.setMarker(tmpPoint,title+"HSL");
+                        title = auto['ID'];
+                        me.setMarker(tmpPoint, title + "HSL");
                     }
                 };
 
             });
 
         }
-        
-        this.addMe=function(pos){
-            var message=null;
-            
-            if (localStorage['ID'] && localStorage['password'] ){
-               
+
+        this.addMe = function(pos) {
+            var message = null;
+
+            if (localStorage['ID'] && localStorage['password']) {
+
             } else {
-                localStorage['ID']=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
-                localStorage['password']=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+                localStorage['ID'] = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+                localStorage['password'] = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
             }
-            
-             message={ID: localStorage['ID'],
-                        password: localStorage['password'],
-                        Lat: pos.coords.latitude,
-                        Lng: pos.coords.longitude}
-                        
-            $.post(this.apiPath+'usercars/', message);
+
+            message = {
+                ID: localStorage['ID'],
+                password: localStorage['password'],
+                Lat: pos.coords.latitude,
+                Lng: pos.coords.longitude
+            }
+
+            $.post(this.apiPath + 'usercars/', message);
         }
 
 
     }
-    
+
 
 
     window.App = window.app || {};
@@ -326,14 +331,14 @@ $(document).ready(function() { //tehdään alustus täällä
     map.initMap();
     map.getRoutes();
     map.getStops();
-    
-    window.setInterval(function (){
+
+    window.setInterval(function() {
         map.update();
-    },3000);
-    
-    $("#LOCATE").click(function(){
+    }, 3000);
+
+    $("#LOCATE").click(function() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(pos){
+            navigator.geolocation.getCurrentPosition(function(pos) {
                 map.addMe(pos);
             });
         } else {
